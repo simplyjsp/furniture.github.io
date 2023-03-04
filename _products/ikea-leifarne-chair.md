@@ -1,4 +1,5 @@
 ---
+layout: product
 title: LEIFARNE Chair
 photos:
   - https://www.myikeabedroom.com/wp-content/uploads/2020/01/LEIFARNE-Chair.png
