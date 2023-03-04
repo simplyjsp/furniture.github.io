@@ -1,4 +1,5 @@
 ---
+layout: product
 title: Pello Armchair
 photos:
   - https://www.myikeabedroom.com/wp-content/uploads/2020/01/Pello-Armchair.png
