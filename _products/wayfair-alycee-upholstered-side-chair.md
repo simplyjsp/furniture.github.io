@@ -1,4 +1,5 @@
 ---
+layout: product
 title: Alycee Upholstered Side Chair
 photos:
   - https://secure.img1-cg.wfcdn.com/im/29887955/resize-h700-w700%5Ecompr-r85/2017/201715639/Alycee+Upholstered+Side+Chair.jpg
