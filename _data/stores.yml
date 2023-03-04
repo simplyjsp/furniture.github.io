@@ -1,0 +1,14 @@
+- name: Walmart
+  address: 150 Harrison Ave, Kearny, NJ 07032, United States
+  category: Chairs
+  description: Walmart Supercenter in Kearny, NJ. Opening times: Mon-Sun 9 AM - 5 PM
+
+- name: IKEA
+  address: 100 IKEA Drive Paramus, NJ 07652, United States
+  category: Chairs
+  description: IKEA Paramus, New Jersey. Opening times: Monday - Saturday: 10 AM - 6 PM, Sunday closed.
+
+- name: Wayfair
+  address: 801 W Linden Ave, Linden, NJ 07036, United States
+  category: Chairs
+  description: Wayfair warehouse. Opening times: Monday - Friday 7 AM - 7 PM
