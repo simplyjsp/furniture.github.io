@@ -1,4 +1,5 @@
 ---
+layout: product
 title: Aurelio Upholstered Armchair
 photos:
   - https://secure.img1-cg.wfcdn.com/im/57707661/resize-h700-w700%5Ecompr-r85/2285/228542175/Aurelio+Upholstered+Armchair.jpg
