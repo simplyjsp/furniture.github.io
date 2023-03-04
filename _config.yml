@@ -83,14 +83,10 @@ paginate: 5
 paginate_path: "/page/:num/"
 
 # Jekyll Datapage Generator
-page_gen-dirs: true
-
-# Jekyll Datapage Generator - Products
-page_gen:
-  - data: 'products'
-    template: 'product'
-    name: 'product_name'
-    dir: 'products'
+collections:
+  products:
+    _hide_content: false
+    output: true
 
 # Set the Sass partials directory, as we're using @imports
 sass:
@@ -107,7 +103,6 @@ plugins:
   - jemoji
   - webrick
   - jekyll-github-metadata
-  - jekyll-datapage-generator
 
 # Exclude these files from your production _site
 exclude:
