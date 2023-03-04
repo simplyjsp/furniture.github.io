@@ -1,13 +1,13 @@
 ---
-title: {{page.product_name}}
+title: {{ page.title }}
 layout: default
-description: {{page.product_description}}
+description: {{ content }}
 ---
-<h1>{{page.product_name}} in {{page.product_category}}</h1>
+<h1>{{ page.title }} in {{ page.category }}</h1>
 
 <ul>
-    <li><tt>Name</tt>: {{page.product_name}}</li>
-    <li><tt>Price</tt>: {{page.product_price}}</li>
-    <li><tt>Description</tt>: {{page.product_description}}</li>
-    <li><tt>Store</tt>: {{page.product_store}}</li>
+    <li><tt>Name</tt>: {{ page.title }}</li>
+    <li><tt>Price</tt>: {{ page.price }}</li>
+    <li><tt>Description</tt>: {{ content }}</li>
+    <li><tt>Store</tt>: {{ page.store }}</li>
 </ul>
