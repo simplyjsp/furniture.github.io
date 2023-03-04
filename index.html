@@ -2,6 +2,12 @@
 layout: default
 ---
 
+<div class="products">
+  {% for product in site.data.products %}
+    <p><a href="{{ product.product_name | datapage_url: 'products' }}">{{product.product_name}} - {{product.product_price}}</a></p>
+  {% endfor %}
+</div>
+
 <div class="posts">
   {% for post in paginator.posts %}
   <article class="post">
