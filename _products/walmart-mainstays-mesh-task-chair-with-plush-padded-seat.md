@@ -1,4 +1,5 @@
 ---
+layout: product
 title: Mainstays Mesh Task Chair with Plush Padded Seat
 photos:
   - https://i5.walmartimages.com/asr/40344448-b5fd-4fa2-aaf1-0c83fa641862.885176268823d3d837373899fe7f508a.jpeg
