@@ -3,8 +3,8 @@ layout: default
 ---
 
 <div class="products">
-  {% for product in site.data.products %}
-    <p><a href="{{ product.product_name | datapage_url: 'products' }}">{{product.product_name}} - {{product.product_price}}</a></p>
+  {% for product in site.products %}
+    <p><a href="{{ product.url }}">{{ product.title }} - {{ product.price }}</a></p>
   {% endfor %}
 </div>
 
