@@ -1,13 +1,12 @@
 ---
 title: {{ page.title }}
 layout: default
-description: {{ page.content }}
 ---
 <h1>{{ page.title }} in {{ page.category }}</h1>
 
 <ul>
     <li><tt>Name</tt>: {{ page.title }}</li>
     <li><tt>Price</tt>: {{ page.price }}</li>
-    <li><tt>Description</tt>: {{ page.content | markdownify }}</li>
+    <li><tt>Description</tt>: {{ content | markdownify }}</li>
     <li><tt>Store</tt>: {{ page.store }}</li>
 </ul>
