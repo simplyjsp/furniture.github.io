@@ -12,5 +12,4 @@ group :jekyll_plugins do
   gem "jemoji"
   gem "webrick"
   gem "jekyll-github-metadata"
-  gem "jekyll-datapage-generator"
 end
