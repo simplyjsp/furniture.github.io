@@ -82,6 +82,16 @@ kramdown:
 paginate: 5
 paginate_path: "/page/:num/"
 
+# Jekyll Datapage Generator
+page_gen-dirs: true
+
+# Jekyll Datapage Generator - Products
+page_gen:
+  - data: 'products'
+    template: 'product'
+    name: 'product_name'
+    dir: 'products'
+
 # Set the Sass partials directory, as we're using @imports
 sass:
   sass_dir: _sass
