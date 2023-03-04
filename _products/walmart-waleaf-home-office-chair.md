@@ -1,4 +1,5 @@
 ---
+layout: product
 title: Waleaf Home Office Chair
 photos:
   - https://i5.walmartimages.com/asr/18a9660d-dfcc-4d4a-bc87-50cc4636422f.d160779e0898863dbc8b738026f3c82d.jpeg
