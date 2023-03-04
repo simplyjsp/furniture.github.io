@@ -1,0 +1,75 @@
+- name: Pello Armchair
+  photos:
+    - https://www.myikeabedroom.com/wp-content/uploads/2020/01/Pello-Armchair.png
+  category: Armchairs
+  price: $49.99
+  sale_price: $49.99
+  description: The IKEA Pello Armchair is a great chair for every room in the house. It’s durable, comfortable, and modern. It has a wood frame, and a cushion to make it extra lush. The product is sustainable, too. The wood is strong and renewable, and the cushion is made of recycled cotton.
+  store: IKEA
+
+- name: LEIFARNE Chair
+  photos:
+    - https://www.myikeabedroom.com/wp-content/uploads/2020/01/LEIFARNE-Chair.png
+  category: Office Chair
+  price: $29.99
+  sale_price: $24.99
+  description: IKEA’s Leifarne chair is cute, sleek, and perfect for a desk or the kitchen. It’s a simple yellow chair made of plastic and metal. The seat is comfortable because it has a scooped back that shapes to the owner’s needs.
+  store: IKEA
+
+- name: White TEODORES Chair
+  photos:
+    - https://www.myikeabedroom.com/wp-content/uploads/2020/01/White-TEODORES-Chair.png
+  category: Office Chair
+  price: $25
+  sale_price: $25
+  description: Teodore’s chair from IKEA is both boring and fun. Its striking white color will dazzle those who look at it. The white is so white, the chair looks like the teeth everyone wants to have. That being said, the white means those who own it should be careful to avoid stains.
+  store: IKEA
+
+- name: Alycee Upholstered Side Chair
+  photos:
+    - https://secure.img1-cg.wfcdn.com/im/29887955/resize-h700-w700%5Ecompr-r85/2017/201715639/Alycee+Upholstered+Side+Chair.jpg
+  category: Accent Chair
+  price: $77.99
+  sale_price: $59.99
+  description: This accent chair brings a boxy, eye-catching silhouette to your space. It's crafted with an engineered wood frame, and it sits on solid wood legs with a walnut finish. It features a rectangular shape and a sleek armless design.
+  store: Wayfair
+
+- name: Aurelio Upholstered Armchair
+  photos:
+    - https://secure.img1-cg.wfcdn.com/im/57707661/resize-h700-w700%5Ecompr-r85/2285/228542175/Aurelio+Upholstered+Armchair.jpg
+  category: Armchair
+  price: $145.99
+  sale_price: $99.99
+  description: Featuring gently sloping curves and wider cushion, create a favorite spot for leisure. Finished with lovely tapered legs for a sturdy structure and minimalist design style .Our mid-century accent armchair complements modern and contemporary decor styles alike.
+  store: Wayfair
+
+- name: Button-Tufted Accent Wingback Chair
+  photos:
+    - https://secure.img1-cg.wfcdn.com/im/83033761/resize-h700-w700%5Ecompr-r85/2219/221959332/Button-Tufted+Accent+Wingback+Chair+with+Rolled+Arm+and+Thick+Padded+Cushion.jpg
+  category: Accent Chair
+  price: $259.99
+  sale_price: $259.99
+  description: This tufted wingback accent chair is an essential addition to your living room or bedroom. It's built with a solid and engineered wood frame and features an integrated backrest and arms to create that classic wingback silhouette.
+  store: Wayfair
+
+- name: Mainstays Mesh Task Chair with Plush Padded Seat
+  photos:
+    - https://i5.walmartimages.com/asr/40344448-b5fd-4fa2-aaf1-0c83fa641862.885176268823d3d837373899fe7f508a.jpeg
+    - https://i5.walmartimages.com/asr/395b30b8-ebec-4714-89b6-496d17880d50_2.97bf83e6f88d5cf74c1a633b6439a8fc.jpeg
+    - https://i5.walmartimages.com/asr/e8506504-0e15-4a7f-93c6-c6a443e25128.be9c90d914b892e925c766da815e573c.jpeg
+  category: Office Chair
+  price: $29.92
+  sale_price: $29.92
+  description: The Mainstays Mesh Task Chair is a blend of comfort, support and mobility. Backrest and seat cover are made of a lightweight breathable black mesh fabric upholstery.
+  store: Walmart
+
+- name: Waleaf Home Office Chair
+  photos:
+    - https://i5.walmartimages.com/asr/18a9660d-dfcc-4d4a-bc87-50cc4636422f.d160779e0898863dbc8b738026f3c82d.jpeg
+    - https://i5.walmartimages.com/asr/4bee7d0f-b53f-4ba1-affc-4de80085a8b2.6b440df9984f94f921ab6452244b7efc.jpeg
+    - https://i5.walmartimages.com/asr/d2b201fd-4ca7-4f52-854a-be463214bb8b.2f040199efcad77a6a8d185449f83fae.jpeg
+  category: Office Chair
+  price: $114.99
+  sale_price: $99.99
+  description: Waleaf Office Chair is made with quality materials that will never bend, break, or malfunction. Upgraded configuration cushioned backrest designed and seat upholstered in PU leather make you feel comfortable during a long time working. The desk chair is perfect for workplaces like home, office, conference room, and reception rooms.
+  store: Walmart
