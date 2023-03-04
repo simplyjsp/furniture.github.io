@@ -1,4 +1,5 @@
 ---
+layout: product
 title: Button-Tufted Accent Wingback Chair
 photos:
   - https://secure.img1-cg.wfcdn.com/im/83033761/resize-h700-w700%5Ecompr-r85/2219/221959332/Button-Tufted+Accent+Wingback+Chair+with+Rolled+Arm+and+Thick+Padded+Cushion.jpg
