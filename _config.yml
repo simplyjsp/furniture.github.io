@@ -87,6 +87,9 @@ collections:
   products:
     _hide_content: false
     output: true
+  stores:
+    _hide_content: false
+    output: true
 
 # Set the Sass partials directory, as we're using @imports
 sass:
