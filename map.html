@@ -5,8 +5,8 @@ title: Map
 <!DOCTYPE html>
 <html>
 <head><title>Leaflet</title>
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
 <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>     
@@ -17,13 +17,20 @@ title: Map
 <div id="map"></div>
 
 <script>
-//Example from https://github.com/perliedman/leaflet-control-geocoder  
-    var map = L.map('map').setView([42.697765, -73.108005], 3);  
+ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+   maxZoom: 19,
+   attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+ }).addTo(map);
 
-    var osm=new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+ // show the scale bar on the lower left corner
+ L.control.scale({imperial: true, metric: true}).addTo(map);
 
-    L.Control.geocoder().addTo(map);
-
+ // show a marker on the map
+ L.marker({lon: 0, lat: 0}).bindPopup('The center of the world').addTo(map);
+ 
+ // geocoder
+ L.Control.geocoder().addTo(map);
+ 
 </script>
 </body>
 </html>
