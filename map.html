@@ -20,7 +20,7 @@ title: Map
 //Example from https://github.com/perliedman/leaflet-control-geocoder  
     var map = L.map('map').setView([42.697765, -73.108005], 3);  
 
-    var osm=new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+    var osm=new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
     L.Control.geocoder().addTo(map);
 
