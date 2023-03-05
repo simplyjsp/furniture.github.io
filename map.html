@@ -5,19 +5,16 @@ title: Map
 <!DOCTYPE html>
 <html>
 <head><title>Leaflet</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>     
 </head>
 <body>
-    <style> #map {width: 100%;height: 100%; }   </style>
+<style> #map {width: 400px;height: 400px; } </style>
 
 <div id="map"></div>
 
 <script>
- // initialize Leaflet
  var map = L.map('map').setView({lon: 0, lat: 0}, 2);
     
  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -25,14 +22,38 @@ title: Map
    attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
  }).addTo(map);
 
- // show the scale bar on the lower left corner
- L.control.scale({imperial: true, metric: true}).addTo(map);
-
- // show a marker on the map
  L.marker({lon: 0, lat: 0}).bindPopup('The center of the world').addTo(map);
- 
- // geocoder
- L.Control.geocoder().addTo(map);
+
+ var stores = [
+  {% for store in site.stores %}
+    {
+      "title": "{{ store.title }}",
+      "address": "{{ store.address }}",
+      "phone": "{{ store.phone }}",
+      "opening_times": {{ store.opening_times | jsonify }},
+      "url": "{{ store.url }}"
+    }
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+];
+
+function add_custom_marker(title, address, phone, opening_times) {
+  var u = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q='+encodeURIComponent(address);
+  var url = new URL(u);
+  fetch(url).then((res) => {
+    res.text().then((res_text) => {
+      var json_text = JSON.parse(res_text);
+      var get_lat = json_text[0]['lat'];
+      var get_lon = json_text[0]['lon'];
+      var get_desc = title+'<br>'+address+'<br>'+phone+'<br>'+opening_times.join(', ');
+      L.marker({lon: get_lon, lat: get_lat}).bindPopup(get_desc).addTo(map);
+    });
+  });
+}
+
+stores.forEach((item) => {
+  add_custom_marker(item.title, item.address, item.phone, item.opening_times);
+});
  
 </script>
 </body>
