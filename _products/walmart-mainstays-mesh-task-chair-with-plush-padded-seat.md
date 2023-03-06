@@ -22,19 +22,19 @@ date: 2023-03-04 14:00:00 +0000
 
 Mainstays Vinyl and Mesh Task Chair, Multiple Colors.
 
-Color: Black
-Brand: Unknown
-Product Dimensions: 23"D x 18.5"W x 36.5"H
-Style: Modern
-Special Feature: Swivel, Rolling
-Material: Vinyl
-Recommended Uses For Product: Office
-Room Type: Office, Study Room
-Age Range (Description): Adult
-Unit Count: 1 Count
-Maximum Weight Recommendation: 250 Pounds
-Seat Material Type: Vinyl
-Furniture base movement: Swivel
-Item Weight: 37.8 pounds
-Package Dimensions: 24.09 x 22.28 x 9.02 inches
-Is Discontinued By Manufacturer: No 
+- Color: Black
+- Brand: Unknown
+- Product Dimensions: 23"D x 18.5"W x 36.5"H
+- Style: Modern
+- Special Feature: Swivel, Rolling
+- Material: Vinyl
+- Recommended Uses For Product: Office
+- Room Type: Office, Study Room
+- Age Range (Description): Adult
+- Unit Count: 1 Count
+- Maximum Weight Recommendation: 250 Pounds
+- Seat Material Type: Vinyl
+- Furniture base movement: Swivel
+- Item Weight: 37.8 pounds
+- Package Dimensions: 24.09 x 22.28 x 9.02 inches
+- Is Discontinued By Manufacturer: No 
