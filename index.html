@@ -53,7 +53,7 @@ layout: default
         <div class="grid grid-cols-3 gap-3">
             {% for store in site.stores %}
             <div class="relative rounded-sm overflow-hidden group">
-                <img src="{{ store.photo[0] }}" alt="category 1" class="w-full">
+                <img src="{{ store.photos[0] }}" alt="category 1" class="w-full">
                 <a href="{{ store.url }}"
                     class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">{{ store.title }}</a>
             </div>
@@ -69,7 +69,7 @@ layout: default
             {% for product in site.products %}
             <div class="bg-white shadow rounded overflow-hidden group">
                 <div class="relative">
-                    <img src="{{ product.photo[0] }}" alt="" class="w-full">
+                    <img src="{{ product.photos[0] }}" alt="" class="w-full">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
                     justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                         <a href="{{ product.url }}"
@@ -80,7 +80,7 @@ layout: default
                     </div>
                 </div>
                 <div class="pt-4 pb-3 px-4">
-                    <a href="#">
+                    <a href="{{ product.url }}">
                         <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">{{ product.title }}</h4>
                     </a>
                     <div class="flex items-baseline mb-1 space-x-2">
