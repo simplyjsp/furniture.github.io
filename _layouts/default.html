@@ -2,35 +2,40 @@
 <html lang="{{ site.lang | default: "en" }}">
   <head>
     {% include meta.html %}
+    
+    <!-- Meta -->
+    <title>{% if page.title and page.title != 'Home' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    {% assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
+    <meta name="description" content="{% if page.summary %}{{ page.summary }}{% elsif pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/BKqmkBj/chair-192.png">
+    <link rel="shortcut icon" sizes="192x192" href="https://i.ibb.co/BKqmkBj/chair-192.png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/BKqmkBj/chair-192.png">
 
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }} – {{ site.description }}</title>
-
+    <!-- Facebook integration -->
+    <meta property="og:title" content="{{ page.title }}"/>
+    {% if page.image %}<meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}"/>{% endif %}
+    <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}"/>
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="og:description" content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}"/>
+    
+    <!-- Twitter integration -->
+    <meta name="twitter:card" content="summary">
+    {% if site.twitter_url %}<meta name="twitter:site" content="{{ site.twitter_url }}">{% endif %}
+    <meta name="twitter:title" content="{{ page.title }}" />
+    {% if page.image %}<meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />{% endif %}
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+    <meta name="twitter:description" content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
+    
+    <!-- RSS -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "/sitemap.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/main.css"/>
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/image/favicon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/image/favicon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/favicon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/image/favicon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/image/favicon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/image/favicon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/favicon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/favicon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/favicon-180x180.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/image/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/image/favicon-192x192.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/assets/image/favicon.ico">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/assets/image/favicon-144x144.png">
-    <meta name="msapplication-config" content="/assets/image/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.5/plyr.css" media="print" onload="this.media='all'"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous" media="print" onload="this.media='all'"/>
-
   </head>
 
   <body>
@@ -39,45 +44,15 @@
     <header class="py-4 shadow-sm bg-white">
         <div class="container flex items-center justify-between">
             <a href="index.html">
-                <img src="../assets/images/logo.svg" alt="Logo" class="w-32">
+                <img src="https://i.postimg.cc/y6prxp9P/chair-logo.png" alt="Best Chairs" class="h-32">
             </a>
 
             <div class="w-full max-w-xl relative flex">
-                <span class="absolute left-4 top-3 text-lg text-gray-400">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </span>
-                <input type="text" name="search" id="search"
-                    class="w-full border border-primary border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
-                    placeholder="search">
-                <button
-                    class="bg-primary border border-primary text-white px-8 rounded-r-md hover:bg-transparent hover:text-primary transition">Search</button>
+               (844) 890-789
             </div>
 
             <div class="flex items-center space-x-4">
-                <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
-                    <div class="text-2xl">
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="text-xs leading-3">Wishlist</div>
-                    <div
-                        class="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-                        8</div>
-                </a>
-                <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
-                    <div class="text-2xl">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </div>
-                    <div class="text-xs leading-3">Cart</div>
-                    <div
-                        class="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-                        2</div>
-                </a>
-                <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
-                    <div class="text-2xl">
-                        <i class="fa-regular fa-user"></i>
-                    </div>
-                    <div class="text-xs leading-3">Account</div>
-                </a>
+               150 Harrison Ave, Kearny, NJ 07032, United States
             </div>
         </div>
     </header>
@@ -90,47 +65,28 @@
                 <span class="text-white">
                     <i class="fa-solid fa-bars"></i>
                 </span>
-                <span class="capitalize ml-2 text-white">All Categories</span>
+                <span class="capitalize ml-2 text-white">Showrooms</span>
 
                 <!-- dropdown -->
-                <div
-                    class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
-                    <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                        <img src="../assets/images/icons/sofa.svg" alt="sofa" class="w-5 h-5 object-contain">
-                        <span class="ml-6 text-gray-600 text-sm">Sofa</span>
+                <div class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
+                    {% for store in site.stores %}
+                    <a href="{{ store.url }}" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
+                      <span class="ml-6 text-gray-600 text-sm">{{ store.title }}</span>
                     </a>
-                    <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                        <img src="../assets/images/icons/terrace.svg" alt="terrace" class="w-5 h-5 object-contain">
-                        <span class="ml-6 text-gray-600 text-sm">Terarce</span>
-                    </a>
-                    <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                        <img src="../assets/images/icons/bed.svg" alt="bed" class="w-5 h-5 object-contain">
-                        <span class="ml-6 text-gray-600 text-sm">Bed</span>
-                    </a>
-                    <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                        <img src="../assets/images/icons/office.svg" alt="office" class="w-5 h-5 object-contain">
-                        <span class="ml-6 text-gray-600 text-sm">office</span>
-                    </a>
-                    <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                        <img src="../assets/images/icons/outdoor-cafe.svg" alt="outdoor" class="w-5 h-5 object-contain">
-                        <span class="ml-6 text-gray-600 text-sm">Outdoor</span>
-                    </a>
-                    <a href="#" class="flex items-center px-6 py-3 hover:bg-gray-100 transition">
-                        <img src="../assets/images/icons/bed-2.svg" alt="Mattress" class="w-5 h-5 object-contain">
-                        <span class="ml-6 text-gray-600 text-sm">Mattress</span>
-                    </a>
+                    {% endfor %}
                 </div>
             </div>
 
             <div class="flex items-center justify-between flex-grow pl-12">
-                <div class="flex items-center space-x-6 capitalize">
-                    <a href="../index.html" class="text-gray-200 hover:text-white transition">Home</a>
-                    <a href="pages/shop.html" class="text-gray-200 hover:text-white transition">Shop</a>
-                    <a href="#" class="text-gray-200 hover:text-white transition">About us</a>
-                    <a href="#" class="text-gray-200 hover:text-white transition">Contact us</a>
+                <div class="flex items-center space-x-4 capitalize">
                 </div>
-                <a href="#" class="text-gray-200 hover:text-white transition">Login/Register</a>
-            </div>
+                <div class="flex items-center space-x-8 capitalize">
+                    <a href="{{ site.baseurl }}" class="text-gray-200 hover:text-white transition">Home</a>
+                    <a href="{{ site.baseurl }}/store" class="text-gray-200 hover:text-white transition">Chairs</a>
+                    <a href="{{ site.baseurl }}/about" class="text-gray-200 hover:text-white transition">About</a>
+                    <a href="{{ site.baseurl }}/contact" class="text-gray-200 hover:text-white transition">Contact</a>
+                </div>
+          </div>
         </div>
     </nav>
     <!-- ./navbar -->
@@ -143,10 +99,10 @@
     <footer class="bg-white pt-16 pb-12 border-t border-gray-100">
         <div class="container grid grid-cols-3">
             <div class="col-span-1 space-y-8 mr-2">
-                <img src="../assets/images/logo.svg" alt="logo" class="w-30">
+                <img src="https://i.postimg.cc/y6prxp9P/chair-logo.png" alt="logo" class="h-32">
                 <div class="mr-2">
                     <p class="text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, hic?
+                        Find the best chairs for your home.
                     </p>
                 </div>
                 <div class="flex space-x-6">
@@ -213,19 +169,10 @@
     <!-- copyright -->
     <div class="bg-gray-800 py-4">
         <div class="container flex items-center justify-between">
-            <p class="text-white">&copy; TailCommerce - All Right Reserved</p>
-            <div>
-                <img src="../assets/images/methods.png" alt="methods" class="h-5">
-            </div>
+            <p class="text-white">&copy; Best Chairs</p>
         </div>
     </div>
     <!-- ./copyright -->
-
-    <script defer src="https://cdn.plyr.io/3.6.5/plyr.js"></script>
-    <script>
-      const player = new Plyr("#player", { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1, playsinline: 1 , enablejsapi: 1, autoplay: 0, focused: true, global: false });
-      window.player = player;
-    </script>
 
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <script type="text/javascript">
@@ -240,28 +187,6 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
 
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
-            onload="renderMathInElement(document.body,{
-                    delimiters: [
-                    { left: '$$',  right: '$$',  display: true  },
-                    { left: '$',   right: '$',   display: false },
-                    { left: '\\[', right: '\\]', display: true  },
-                    { left: '\\(', right: '\\)', display: false }
-                    ]});">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
-      function addDarkmodeWidget() {
-        new Darkmode().showWidget();
-        window.addEventListener('load', addDarkmodeWidget);
-      }
-      const options = {
-        label: '🌓',
-      }
-      const darkmode = new Darkmode(options);
-            darkmode.showWidget();
-    </script>
 
   </body>
 </html>
