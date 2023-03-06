@@ -9,10 +9,10 @@ sale_price: $59.99
 stock: Out of Stock
 sku: C0006
 colors:
-  - Yellow: #F8E23A
-  - Black: #000000
-  - Gray: #979797
-  - Blue: #1D9BF0
+  - Yellow: "#F8E23A"
+  - Black: "#000000"
+  - Gray: "#979797"
+  - Blue: "#1D9BF0"
 store: Wayfair
 summary: This accent chair brings a boxy, eye-catching silhouette to your space.
 date: 2023-03-04 14:00:00 +0000
