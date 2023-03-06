@@ -11,9 +11,9 @@ sale_price: $99.99
 stock: In Stock
 sku: C0005
 colors:
-  - Black: #000000
-  - Brown: #765347
-  - White: #FFFFFF
+  - Black: "#000000"
+  - Brown: "#765347"
+  - White: "#FFFFFF"
 store: Walmart
 summary: A comfortable office chair, made with quality materials.
 date: 2023-03-04 14:00:00 +0000
