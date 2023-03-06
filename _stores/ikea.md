@@ -7,8 +7,8 @@ category: Chairs
 address: 100 IKEA Drive Paramus, NJ 07652, United States
 phone: (844) 890-789
 opening_times:
-  - Mon - Sat: 10 AM - 6 PM
-  - Sun: Closed
+  - "Mon - Sat: 10 AM - 6 PM"
+  - "Sun: Closed"
 date: 2023-03-04 14:00:00 +0000
 ---
 
