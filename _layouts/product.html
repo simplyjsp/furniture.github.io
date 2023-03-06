@@ -21,7 +21,9 @@ layout: default
             <img src="{{ page.photos[0] }}" alt="" class="w-full">
             <div class="grid grid-cols-5 gap-4 mt-4">
                 {% for photo in page.photos %}
-                <img src="{{ photo }}" alt="" class="w-full cursor-pointer border">
+                <a href="{{ photo }}" class="glightbox">
+                  <img src="{{ photo }}" alt="" class="w-full cursor-pointer border">
+                </a>
                 {% endfor %}
             </div>
         </div>
@@ -52,7 +54,8 @@ layout: default
                 </p>
                 <p class="space-x-2">
                     <span class="text-gray-800 font-semibold">Store: </span>
-                    <span class="text-gray-600">{{ page.store }}</span>
+                    {% assign fetch_store = site.stores | where:"title", page.store | first %}
+                    <span class="text-gray-600"><a href="{{ fetch_store.url }}">{{ page.store }}</a></span>
                 </p>
                 <p class="space-x-2">
                     <span class="text-gray-800 font-semibold">SKU: </span>
