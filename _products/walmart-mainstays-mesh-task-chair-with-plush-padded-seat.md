@@ -11,10 +11,10 @@ sale_price: $29.92
 stock: In Stock
 sku: C0004
 colors:
-  - Black: #000000
-  - Brown: #765347
-  - Gray: #979797
-  - White: #FFFFFF
+  - Black: "#000000"
+  - Brown: "#765347"
+  - Gray: "#979797"
+  - White: "#FFFFFF"
 store: Walmart
 summary: A comfortable office chair for your home. Available in multiple colors.
 date: 2023-03-04 14:00:00 +0000
