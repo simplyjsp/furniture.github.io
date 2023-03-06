@@ -8,8 +8,33 @@ photos:
 category: Office Chair
 price: $29.92
 sale_price: $29.92
+stock: In Stock
+sku: C0004
+colors:
+  - Black: #000000
+  - Brown: #765347
+  - Gray: #979797
+  - White: #FFFFFF
 store: Walmart
+summary: A comfortable office chair for your home. Available in multiple colors.
 date: 2023-03-04 14:00:00 +0000
 ---
 
-The Mainstays Mesh Task Chair is a blend of comfort, support and mobility. Backrest and seat cover are made of a lightweight breathable black mesh fabric upholstery.
+Mainstays Vinyl and Mesh Task Chair, Multiple Colors.
+
+Color: Black
+Brand: Unknown
+Product Dimensions: 23"D x 18.5"W x 36.5"H
+Style: Modern
+Special Feature: Swivel, Rolling
+Material: Vinyl
+Recommended Uses For Product: Office
+Room Type: Office, Study Room
+Age Range (Description): Adult
+Unit Count: 1 Count
+Maximum Weight Recommendation: 250 Pounds
+Seat Material Type: Vinyl
+Furniture base movement: Swivel
+Item Weight: 37.8 pounds
+Package Dimensions: 24.09 x 22.28 x 9.02 inches
+Is Discontinued By Manufacturer: No 
