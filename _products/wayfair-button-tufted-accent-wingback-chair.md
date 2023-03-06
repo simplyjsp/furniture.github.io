@@ -9,7 +9,7 @@ sale_price: $259.99
 stock: In Stock
 sku: C0008
 colors:
-  - White: #FFFFFF
+  - White: "#FFFFFF"
 store: Wayfair
 summary: This tufted wingback accent chair is an essential addition to your living room or bedroom.
 date: 2023-03-04 14:00:00 +0000
