@@ -1482,6 +1482,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1.75rem;
 }
 
+.desc-pb-12 p {
+  padding-bottom: 12px;
+}
+
 .text-left {
   text-align: left;
 }
