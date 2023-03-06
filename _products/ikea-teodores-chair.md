@@ -8,6 +8,8 @@ price: $25
 sale_price: $25
 stock: In Stock
 sku: C0003
+colors:
+  - White: #FFFFFF
 store: IKEA
 summary: A white chair for the kitchen or office. Stackable, affordable and a good choice for events.
 date: 2023-03-04 14:00:00 +0000
