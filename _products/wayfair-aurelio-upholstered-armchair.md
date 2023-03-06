@@ -9,8 +9,8 @@ sale_price: $99.99
 stock: In Stock
 sku: C0007
 colors:
-  - Blue: #1D9BF0
-  - Gray: #979797
+  - Blue: "#1D9BF0"
+  - Gray: "#979797"
 store: Wayfair
 summary: Featuring gently sloping curves and wider cushion, create a favorite spot for leisure.
 date: 2023-03-04 14:00:00 +0000
