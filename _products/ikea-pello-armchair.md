@@ -8,6 +8,8 @@ price: $49.99
 sale_price: $49.99
 stock: Out of Stock
 sku: C0002
+colors:
+  - White: #FFFFFF
 store: IKEA
 summary: A durable, comfortable and modern armchair. Made with recycled cotton and renewable wood.
 date: 2023-03-04 14:00:00 +0000
