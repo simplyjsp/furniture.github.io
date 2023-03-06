@@ -8,6 +8,8 @@ price: $29.99
 sale_price: $24.99
 stock: In Stock
 sku: C0001
+colors:
+  - Yellow: #F8E23A
 store: IKEA
 summary: A comfortable yellow chair for your home. Perfect for the office or kitchen.
 date: 2023-03-04 14:00:00 +0000
