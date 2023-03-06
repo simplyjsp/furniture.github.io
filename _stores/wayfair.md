@@ -7,9 +7,9 @@ category: Chairs
 address: 801 W Linden Ave, Linden, NJ 07036, United States
 phone: (844) 101-202
 opening_times:
-  - Mon - Fri: 7 AM - 3 PM
-  - Sat: 10 AM - 6 PM
-  - Sun: Closed
+  - "Mon - Fri: 7 AM - 3 PM"
+  - "Sat: 10 AM - 6 PM"
+  - "Sun: Closed"
 date: 2023-03-04 14:00:00 +0000
 ---
 
