@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="{{ site.lang | default: "en" }}">
   <head>
-    {% include meta.html %}
     
     <!-- Meta -->
     <title>{% if page.title and page.title != 'Home' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
@@ -44,7 +43,7 @@
     <header class="py-4 shadow-sm bg-white">
         <div class="container flex items-center justify-between">
             <a href="index.html">
-                <img src="https://i.postimg.cc/y6prxp9P/chair-logo.png" alt="Best Chairs" class="h-32">
+                <img src="https://i.postimg.cc/y6prxp9P/chair-logo.png" alt="Best Chairs" class="h-12">
             </a>
 
             <div class="w-full max-w-xl relative flex">
@@ -78,8 +77,6 @@
             </div>
 
             <div class="flex items-center justify-between flex-grow pl-12">
-                <div class="flex items-center space-x-4 capitalize">
-                </div>
                 <div class="flex items-center space-x-8 capitalize">
                     <a href="{{ site.baseurl }}" class="text-gray-200 hover:text-white transition">Home</a>
                     <a href="{{ site.baseurl }}/store" class="text-gray-200 hover:text-white transition">Chairs</a>
@@ -99,7 +96,7 @@
     <footer class="bg-white pt-16 pb-12 border-t border-gray-100">
         <div class="container grid grid-cols-3">
             <div class="col-span-1 space-y-8 mr-2">
-                <img src="https://i.postimg.cc/y6prxp9P/chair-logo.png" alt="logo" class="h-32">
+                <img src="https://i.postimg.cc/y6prxp9P/chair-logo.png" alt="logo" class="h-12">
                 <div class="mr-2">
                     <p class="text-gray-500">
                         Find the best chairs for your home.
@@ -141,25 +138,7 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Solutions</h3>
-                        <div class="mt-4 space-y-4">
-                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Marketing</a>
-                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Analitycs</a>
-                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Commerce</a>
-                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Insights</a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Support</h3>
-                        <div class="mt-4 space-y-4">
-                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Pricing</a>
-                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Documentation</a>
-                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">Guides</a>
-                            <a href="#" class="text-base text-gray-500 hover:text-gray-900 block">API Status</a>
-                        </div>
-                    </div>
+                    MAP
                 </div>
             </div>
         </div>
