@@ -1,5 +1,5 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 /* ! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com */
 
@@ -688,7 +688,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .size-selector input:checked + label {
   --tw-bg-opacity: 1;
-  background-color: rgb(253 61 87 / var(--tw-bg-opacity));
+  background-color: rgb(1 185 67 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -698,7 +698,7 @@ h1, h2, h3, h4, h5, h6 {
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(253 61 87 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(1 185 67 / var(--tw-ring-opacity));
 }
 
 .input-box {
@@ -735,7 +735,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .input-box:focus {
   --tw-border-opacity: 1;
-  border-color: rgb(253 61 87 / var(--tw-border-opacity));
+  border-color: rgb(1 185 67 / var(--tw-border-opacity));
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
@@ -1259,7 +1259,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .border-primary {
   --tw-border-opacity: 1;
-  border-color: rgb(253 61 87 / var(--tw-border-opacity));
+  border-color: rgb(1 185 67 / var(--tw-border-opacity));
 }
 
 .border-gray-100 {
@@ -1299,7 +1299,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(253 61 87 / var(--tw-bg-opacity));
+  background-color: rgb(1 185 67 / var(--tw-bg-opacity));
 }
 
 .bg-gray-800 {
@@ -1595,7 +1595,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-primary {
   --tw-text-opacity: 1;
-  color: rgb(253 61 87 / var(--tw-text-opacity));
+  color: rgb(1 185 67 / var(--tw-text-opacity));
 }
 
 .text-yellow-400 {
@@ -1693,7 +1693,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
-  color: rgb(253 61 87 / var(--tw-text-opacity));
+  color: rgb(1 185 67 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {
@@ -1713,7 +1713,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .focus\:border-primary:focus {
   --tw-border-opacity: 1;
-  border-color: rgb(253 61 87 / var(--tw-border-opacity));
+  border-color: rgb(1 185 67 / var(--tw-border-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -1729,7 +1729,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .focus\:ring-primary:focus {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(253 61 87 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(1 185 67 / var(--tw-ring-opacity));
 }
 
 .group:hover .group-hover\:visible {
