@@ -6,13 +6,13 @@
     <title>{% if page.title and page.title != 'Home' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     {% assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
     <meta name="description" content="{% if page.summary %}{{ page.summary }}{% elsif pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}">
-    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/BKqmkBj/chair-192.png">
-    <link rel="shortcut icon" sizes="192x192" href="https://i.ibb.co/BKqmkBj/chair-192.png">
-    <link rel="apple-touch-icon" href="https://i.ibb.co/BKqmkBj/chair-192.png">
+    <link rel="shortcut icon" type="image/png" href="{{ site.favicon }}">
+    <link rel="shortcut icon" sizes="192x192" href="{{ site.favicon }}">
+    <link rel="apple-touch-icon" href="">
 
     <!-- Facebook integration -->
     <meta property="og:title" content="{{ page.title }}"/>
-    {% if page.image %}<meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}"/>{% endif %}
+    {% if page.photos[0] %}<meta property="og:image" content="{{ page.photos[0] }}"/>{% endif %}
     <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}"/>
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="{{ site.title }}"/>
@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary">
     {% if site.twitter_url %}<meta name="twitter:site" content="{{ site.twitter_url }}">{% endif %}
     <meta name="twitter:title" content="{{ page.title }}" />
-    {% if page.image %}<meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />{% endif %}
+    {% if page.photos[0] %}<meta name="twitter:image" content="{{ page.photos[0] }}" />{% endif %}
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
     <meta name="twitter:description" content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
     
@@ -35,7 +35,14 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
-  </head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />  
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+</head>
 
   <body>
 
@@ -43,15 +50,17 @@
     <header class="py-4 shadow-sm bg-white">
         <div class="container flex items-center justify-between">
             <a href="index.html">
-                <img src="https://i.postimg.cc/y6prxp9P/chair-logo.png" alt="Best Chairs" class="h-12">
+                <img src="{{ site.logo }}" alt="{{ site.title }}" class="h-12">
             </a>
 
-            <div class="w-full max-w-xl relative flex">
-               (844) 890-789
+            <div class="flex items-center space-x-4">
+              <span class="text-primary text-base"><i class="fa-solid fa-phone"></i></span>
+              <span class="text-gray-600 text-sm">{{ site.phone }}</span>
             </div>
 
             <div class="flex items-center space-x-4">
-               150 Harrison Ave, Kearny, NJ 07032, United States
+              <span class="text-primary text-base"><i class="fa-solid fa-map-marker-alt"></i></span>
+              <span class="text-gray-600 text-sm">{{ site.street_address }}</span>
             </div>
         </div>
     </header>
@@ -77,7 +86,7 @@
             </div>
 
             <div class="flex items-center justify-between flex-grow pl-12">
-                <div class="flex items-center space-x-8 capitalize">
+                <div class="flex items-center capitalize">
                     <a href="{{ site.baseurl }}" class="text-gray-200 hover:text-white transition">Home</a>
                     <a href="{{ site.baseurl }}/store" class="text-gray-200 hover:text-white transition">Chairs</a>
                     <a href="{{ site.baseurl }}/about" class="text-gray-200 hover:text-white transition">About</a>
@@ -96,10 +105,10 @@
     <footer class="bg-white pt-16 pb-12 border-t border-gray-100">
         <div class="container grid grid-cols-3">
             <div class="col-span-1 space-y-8 mr-2">
-                <img src="https://i.postimg.cc/y6prxp9P/chair-logo.png" alt="logo" class="h-12">
+                <img src="{{ site.logo }}" alt="{{ site.title }}" class="h-12">
                 <div class="mr-2">
                     <p class="text-gray-500">
-                        Find the best chairs for your home.
+                        {{ site.footer_description }}
                     </p>
                 </div>
                 <div class="flex space-x-6">
@@ -148,12 +157,11 @@
     <!-- copyright -->
     <div class="bg-gray-800 py-4">
         <div class="container flex items-center justify-between">
-            <p class="text-white">&copy; Best Chairs</p>
+            <p class="text-white">&copy; {{ site.title }}</p>
         </div>
     </div>
     <!-- ./copyright -->
 
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <script type="text/javascript">
       const lightbox = GLightbox({
           touchNavigation: true,
@@ -161,11 +169,5 @@
           autoplayVideos: true
       });
     </script>
-
-    <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
-
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
-
   </body>
 </html>
