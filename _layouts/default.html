@@ -8,7 +8,7 @@
     <meta name="description" content="{% if page.summary %}{{ page.summary }}{% elsif pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}">
     <link rel="shortcut icon" type="image/png" href="{{ site.favicon }}">
     <link rel="shortcut icon" sizes="192x192" href="{{ site.favicon }}">
-    <link rel="apple-touch-icon" href="">
+    <link rel="apple-touch-icon" href="{{ site.favicon }}">
 
     <!-- Facebook integration -->
     <meta property="og:title" content="{{ page.title }}"/>
@@ -137,7 +137,7 @@
              
             <div class="col-span-1 space-y-8 mr-2">
               <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Visit us</h3>
-              <div id="footer_map" class="mt-4" style="width:200px;height:200px"></div>
+              <div id="footer_map" style="width:300px;height:200px;margin-top:1em;"></div>
             </div>
           </div>
         </div>
