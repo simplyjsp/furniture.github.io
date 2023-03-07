@@ -1,0 +1,147 @@
+---
+title: {{ page.title }}
+layout: default
+---
+
+    <!-- breadcrumb -->
+    <div class="container py-4 flex items-center gap-3">
+        <a href="../index.html" class="text-primary text-base">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <span class="text-sm text-gray-400">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+        <p class="text-gray-600 font-medium">Showroom</p>
+    </div>
+    <!-- ./breadcrumb -->
+
+    <!-- product-detail -->
+    <div class="container grid grid-cols-2 gap-6">
+        <div>
+            <img src="{{ page.photos[0] }}" alt="" class="w-10/12">
+            <div class="grid grid-cols-5 gap-4 mt-4">
+                {% for photo in page.photos %}
+                <a href="{{ photo }}" class="glightbox">
+                  <img src="{{ photo }}" alt="" class="w-full cursor-pointer border">
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-3xl font-medium uppercase mb-2">{{ page.title }}</h2>
+            <div class="flex items-center mb-4" style="display:none">
+                <div class="flex gap-1 text-sm text-yellow-400">
+                    <span><i class="fa-solid fa-star"></i></span>
+                    <span><i class="fa-solid fa-star"></i></span>
+                    <span><i class="fa-solid fa-star"></i></span>
+                    <span><i class="fa-solid fa-star"></i></span>
+                    <span><i class="fa-solid fa-star"></i></span>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <p class="space-x-2">
+                    <span class="text-gray-800 font-semibold">Category: </span>
+                    <span class="text-gray-600">{{ page.category }}</span>
+                </p>
+                <p class="space-x-2">
+                    <span class="text-gray-800 font-semibold">Address: </span>
+                    <span class="text-gray-600">{{ page.address | replace: ", ", "<br>" }}</span>
+                </p>
+                <p class="space-x-2">
+                    <span class="text-gray-800 font-semibold">Phone: </span>
+                    <span class="text-gray-600">{{ page.phone }}</span>
+                </p>
+                <p class="space-x-2">
+                    <span class="text-gray-800 font-semibold">Opening Times: </span>
+                    <span class="text-gray-600">{{ page.opening_times | join: "<br>" }}</span>
+                </p>
+            </div>
+
+            <p class="mt-4 text-gray-600">MAP</p>
+
+            <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
+                <a href="{{ store.url }}"
+                    class="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition">
+                    <i class="fa-solid fa-phone"></i> Call {{ page.phone }}
+                </a>
+            </div>
+
+            <div class="flex gap-3 mt-4">
+                <a href="#"
+                    class="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#"
+                    class="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#"
+                    class="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ./product-detail -->
+
+    <!-- description -->
+    <div class="container pb-16 mt-12">
+        <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium">Showroom details</h3>
+        <div class="w-3/5 pt-6">
+            <div class="text-gray-600 desc-pb-12">
+                {{ content | markdownify }}
+            </div>
+        </div>
+    </div>
+    <!-- ./description -->
+
+    <!-- related product -->
+    <div class="container pb-16">
+        <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Products from {{ page.title }}</h2>
+        <div class="grid grid-cols-4 gap-6">
+            {% for product in site.products %}
+              {% if product.store == page.title %}
+              <div class="bg-white shadow rounded overflow-hidden group">
+                <div class="relative">
+                    <img src="{{ product.photos[0] }}" alt="" class="w-full">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
+                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                        <a href="{{ product.url }}"
+                            class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                            title="view product">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="pt-4 pb-3 px-4">
+                    <a href="{{ product.url }}">
+                        <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">{{ product.title }}</h4>
+                    </a>
+                    <div class="flex items-baseline mb-1 space-x-2">
+                      {% if product.sale_price == product.price %}
+                      <p class="text-xl text-primary font-semibold">{{ product.price }}</p>
+                      {% else %}
+                      <p class="text-xl text-primary font-semibold">{{ product.sale_price }}</p>
+                      <p class="text-base text-gray-400 line-through">{{ product.price }}</p>
+                      {% endif %}
+                    </div>
+                    <div class="flex items-center" style="display:none">
+                        <div class="flex gap-1 text-sm text-yellow-400">
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                        </div>
+                        <div class="text-xs text-gray-500 ml-3">(150)</div>
+                    </div>
+                </div>
+                <a href="{{ product.url }}"
+                    class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">View product</a>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+    </div>
+    <!-- ./related product -->
