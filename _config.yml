@@ -2,20 +2,15 @@
 # This file contains configuration flags to customize your site
 #
 
-# Site locale
 lang: "en"
-
-# Name of your site (displayed in the header)
 title: Best Chairs
-
-# Short bio or description
 description: Find the best chairs for your home.
-
-# Short bio or description (displayed in the footer)
 footer_description: Best Chairs helps you to find the best chairs for your home or office. Browse our online store or visit our showrooms.
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
+logo: https://i.postimg.cc/y6prxp9P/chair-logo.png
+favicon: https://i.ibb.co/BKqmkBj/chair-192.png
 avatar: https://i.ibb.co/BKqmkBj/chair-192.png
+phone: (844) 890-789
+street_address: 150 Harrison Ave, Kearny, NJ 07032, United States
 
 #
 # Flags below are optional
