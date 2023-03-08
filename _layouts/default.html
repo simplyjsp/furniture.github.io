@@ -55,12 +55,12 @@
 
             <div class="flex items-center space-x-4">
               <span class="text-primary text-base"><i class="fa-solid fa-phone"></i></span>
-              <span class="text-gray-600 text-sm">Call us: {{ site.phone }}</span>
+              <span class="text-gray-600 text-sm">Call us: (844) 890-789</span>
             </div>
 
             <div class="flex items-center space-x-4">
               <span class="text-primary text-base"><i class="fa-solid fa-map-marker-alt"></i></span>
-              <span class="text-gray-600 text-sm">{{ site.street_address }}</span>
+              <span class="text-gray-600 text-sm">150 Harrison Ave, Kearny, NJ 07032, United States</span>
             </div>
         </div>
     </header>
@@ -107,7 +107,7 @@
                 <img src="{{ site.logo }}" alt="{{ site.title }}" class="h-12">
                 <div class="mr-2">
                     <p class="text-gray-500">
-                        {{ site.footer_description }}
+                        Best Chairs helps you to find the best chairs for your home or office. Browse our online store or visit our showrooms.
                     </p>
                 </div>
                 <div class="flex space-x-6">
@@ -126,18 +126,16 @@
             <div class="col-span-1 space-y-8 mr-2">
               <div>
                 <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Benefits</h3>
-                <ul class="mt-4 space-y-4">
-                    <li class="text-base text-gray-500 hover:text-gray-900 block">Range of high quality chairs</li>
-                    <li class="text-base text-gray-500 hover:text-gray-900 block">100+ positive reviews</li>
-                    <li class="text-base text-gray-500 hover:text-gray-900 block">Free shipping</li>
-                    <li class="text-base text-gray-500 hover:text-gray-900 block">2 year warranty</li>
-                </ul>
+                <p class="text-base text-gray-500">- Range of high quality chairs</p>
+                <p class="text-base text-gray-500">- 100+ positive reviews</p>
+                <p class="text-base text-gray-500">- Free shipping</p>
+                <p class="text-base text-gray-500">- 2 year warranty</p>
               </div>
             </div>
              
             <div class="col-span-1 space-y-8 mr-2">
               <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Visit us</h3>
-              <div id="footer_map" style="width:300px;height:200px;margin-top:1em;"></div>
+              <div id="footer_map" style="width:320px;height:200px;margin-top:1em;"></div>
             </div>
           </div>
         </div>
@@ -188,10 +186,10 @@
               var get_desc = item.title+'<br>'+item.address+'<br>'+item.phone+'<br>'+item.opening_times.join(', ');
               var marker = L.marker({lon: get_lon, lat: get_lat}).bindPopup(get_desc).addTo(footer_map);
               bounds.extend(marker.getLatLng());
+              footer_map.fitBounds(bounds);
             });
           });
         });
-      footer_map.fitBounds(bounds);
       }
       add_custom_markers(footer_stores);
     </script>
