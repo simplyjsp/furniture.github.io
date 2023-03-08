@@ -1,0 +1,77 @@
+---
+layout: default
+permalink: /showrooms
+---
+
+<!-- breadcrumb -->
+    <div class="container py-4 flex items-center gap-3">
+        <a href="{{ site.baseurl }}" class="text-primary text-base">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <span class="text-sm text-gray-400">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+        <p class="text-gray-600 font-medium">Showrooms</p>
+    </div>
+<!-- ./breadcrumb -->
+
+<!-- map -->
+    <div class="container py-16">
+        <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Visit Us</h2>
+        <div id="showrooms_map" style="max-width:80%;width:600px;height:200px;margin:0 auto"></div>
+    </div>
+<!-- ./map -->
+
+<!-- categories -->
+    <div class="container py-16 mt-4">
+        <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Showrooms</h2>
+        <div class="grid mobile-grid grid-cols-3 gap-3">
+            {% for store in site.stores %}
+            <div class="relative rounded-sm overflow-hidden group">
+                <img src="{{ store.photos[0] }}" alt="category 1" class="w-full">
+                <a href="{{ store.url }}"
+                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">{{ store.title }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+<!-- ./categories -->
+
+    <script type="text/javascript">
+      var showrooms_map = L.map('showrooms_map').setView({lon: 0, lat: 0}, 2);   
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+      }).addTo(showrooms_map);
+      var showrooms_map_stores = [
+        {% for store in site.stores %}
+        {
+          "title": "{{ store.title }}",
+          "address": "{{ store.address }}",
+          "phone": "{{ store.phone }}",
+          "opening_times": {{ store.opening_times | jsonify }},
+          "url": "{{ store.url }}"
+        }
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ];
+      function add_custom_markers(showrooms_map_stores) {
+        var bounds = new L.LatLngBounds();
+        showrooms_map_stores.forEach((item) => {
+          var u = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q='+encodeURIComponent(item.address);
+          var url = new URL(u);
+          fetch(url).then((res) => {
+            res.text().then((res_text) => {
+              var json_text = JSON.parse(res_text);
+              var get_lat = json_text[0]['lat'];
+              var get_lon = json_text[0]['lon'];
+              var get_desc = item.title+'<br>'+item.address+'<br>'+item.phone+'<br>'+item.opening_times.join(', ');
+              var marker = L.marker({lon: get_lon, lat: get_lat}).bindPopup(get_desc).addTo(showrooms_map);
+              bounds.extend(marker.getLatLng());
+              showrooms_map.fitBounds(bounds);
+            });
+          });
+        });
+      }
+      add_custom_markers(showrooms_map_stores);
+    </script>
