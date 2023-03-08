@@ -1747,3 +1747,18 @@ h1, h2, h3, h4, h5, h6 {
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
 }
+
+@media (max-width: 800px), (hover: none) {
+  .mobile-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    grid-gap: 2em !important;
+  }
+
+  .mobile-full {
+    width: 100% !important;
+  }
+
+  .mobile-hide {
+    display: none !important;
+  }
+}
