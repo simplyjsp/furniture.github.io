@@ -16,10 +16,10 @@ layout: default
     <!-- ./breadcrumb -->
 
     <!-- product-detail -->
-    <div class="container grid grid-cols-2 gap-6">
+    <div class="container grid mobile-grid grid-cols-2 gap-6">
         <div>
             <img src="{{ page.photos[0] }}" alt="" class="w-10/12">
-            <div class="grid mobile-grid grid-cols-5 gap-4 mt-4">
+            <div class="grid grid-cols-5 gap-4 mt-4">
                 {% for photo in page.photos %}
                 <a href="{{ photo }}" class="glightbox">
                   <img src="{{ photo }}" alt="" class="w-full cursor-pointer border">
