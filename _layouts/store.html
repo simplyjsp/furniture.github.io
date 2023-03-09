@@ -19,7 +19,7 @@ layout: default
     <div class="container grid grid-cols-2 gap-6">
         <div>
             <img src="{{ page.photos[0] }}" alt="" class="w-10/12">
-            <div class="grid grid-cols-5 gap-4 mt-4">
+            <div class="grid mobile-grid grid-cols-5 gap-4 mt-4">
                 {% for photo in page.photos %}
                 <a href="{{ photo }}" class="glightbox">
                   <img src="{{ photo }}" alt="" class="w-full cursor-pointer border">
@@ -46,7 +46,7 @@ layout: default
                 </p>
                 <p class="space-x-2">
                     <span class="text-gray-800 font-semibold">Address: </span>
-                    <span class="text-gray-600">{{ page.address | replace: ", ", "<br>" }}</span>
+                    <span class="text-gray-600"><br>{{ page.address | replace: ", ", "<br>" }}</span>
                 </p>
                 <p class="space-x-2">
                     <span class="text-gray-800 font-semibold">Phone: </span>
@@ -58,7 +58,7 @@ layout: default
                 </p>
             </div>
 
-            <p class="mt-4 text-gray-600">MAP</p>
+            <div id="single_store_map" style="width:100%;height:300px;margin:0 auto"></div>
 
             <div class="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
                 <a href="{{ store.url }}"
@@ -88,7 +88,7 @@ layout: default
     <!-- description -->
     <div class="container pb-16 mt-12">
         <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium">Showroom details</h3>
-        <div class="w-3/5 pt-6">
+        <div class="w-3/5 pt-6 mobile-full">
             <div class="text-gray-600 desc-pb-12">
                 {{ content | markdownify }}
             </div>
@@ -99,7 +99,7 @@ layout: default
     <!-- related product -->
     <div class="container pb-16">
         <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Products from {{ page.title }}</h2>
-        <div class="grid grid-cols-4 gap-6">
+        <div class="grid mobile-grid grid-cols-4 gap-6">
             {% for product in site.products %}
               {% if product.store == page.title %}
               <div class="bg-white shadow rounded overflow-hidden group">
@@ -145,3 +145,44 @@ layout: default
         </div>
     </div>
     <!-- ./related product -->
+
+<script type="text/javascript">
+      const lightbox = GLightbox({
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true
+      });
+      var single_store_map = L.map('single_store_map').setView({lon: 0, lat: 0}, 2);   
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+      }).addTo(single_store_map);
+      var single_store = [
+          {
+          "title": "{{ page.title }}",
+          "address": "{{ page.address }}",
+          "phone": "{{ page.phone }}",
+          "opening_times": {{ page.opening_times | jsonify }},
+          "url": "{{ page.url }}"
+        }
+      ];
+      function add_custom_markers(single_store) {
+        var bounds = new L.LatLngBounds();
+        single_store.forEach((item) => {
+          var u = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q='+encodeURIComponent(item.address);
+          var url = new URL(u);
+          fetch(url).then((res) => {
+            res.text().then((res_text) => {
+              var json_text = JSON.parse(res_text);
+              var get_lat = json_text[0]['lat'];
+              var get_lon = json_text[0]['lon'];
+              var get_desc = item.title+'<br>'+item.address+'<br>'+item.phone+'<br>'+item.opening_times.join(', ');
+              var marker = L.marker({lon: get_lon, lat: get_lat}).bindPopup(get_desc).addTo(single_store_map);
+              bounds.extend(marker.getLatLng());
+              single_store_map.fitBounds(bounds);
+            });
+          });
+        });
+      }
+      add_custom_markers(single_store);
+    </script>
