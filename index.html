@@ -21,7 +21,7 @@ layout: default
 
     <!-- features -->
     <div class="container py-16">
-        <div class="w-10/12 grid grid-cols-3 gap-6 mx-auto justify-center">
+        <div class="w-10/12 grid mobile-grid grid-cols-3 gap-6 mx-auto justify-center">
             <div class="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
                 <span class="text-primary text-3xl"><i class="fa-regular fa-comments"></i></span>
                 <div>
@@ -50,7 +50,7 @@ layout: default
     <!-- categories -->
     <div class="container py-16">
         <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Stores</h2>
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid mobile-grid grid-cols-3 gap-3">
             {% for store in site.stores %}
             <div class="relative rounded-sm overflow-hidden group">
                 <img src="{{ store.photos[0] }}" alt="category 1" class="w-full">
@@ -65,7 +65,7 @@ layout: default
     <!-- new arrival -->
     <div class="container pb-16">
         <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Browse products</h2>
-        <div class="grid grid-cols-4 gap-6">
+        <div class="grid mobile-grid grid-cols-4 gap-6">
             {% for product in site.products %}
             <div class="bg-white shadow rounded overflow-hidden group">
                 <div class="relative">
