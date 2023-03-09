@@ -16,7 +16,7 @@ layout: default
     <!-- ./breadcrumb -->
 
     <!-- product-detail -->
-    <div class="container grid grid-cols-2 gap-6">
+    <div class="container grid mobile-grid grid-cols-2 gap-6">
         <div>
             <img src="{{ page.photos[0] }}" alt="" class="w-10/12">
             <div class="grid grid-cols-5 gap-4 mt-4">
@@ -80,8 +80,8 @@ layout: default
                       {% for pair in color %}
                       <div class="color-selector">
                         <input type="radio" name="color" id="{{ pair[0] }}" class="hidden">
-                        <label for="red"
-                            class="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
+                        <label for="{{ pair[0] }}"
+                            class="border border-primary rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
                             style="background-color: {{ pair[1] }};" title="{{ pair[0] }}"></label>
                       </div>
                       {% endfor %}
@@ -117,7 +117,7 @@ layout: default
     <!-- description -->
     <div class="container pb-16 mt-12">
         <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium">Product details</h3>
-        <div class="w-3/5 pt-6">
+        <div class="w-3/5 pt-6 mobile-full">
             <div class="text-gray-600 desc-pb-12">
                 {{ content | markdownify }}
             </div>
@@ -128,7 +128,7 @@ layout: default
     <!-- related product -->
     <div class="container pb-16">
         <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">More products from {{ page.store }}</h2>
-        <div class="grid grid-cols-4 gap-6">
+        <div class="grid mobile-grid grid-cols-4 gap-6">
             {% for product in site.products %}
               {% if product.store == page.store %}
               <div class="bg-white shadow rounded overflow-hidden group">
