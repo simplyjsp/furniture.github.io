@@ -206,7 +206,7 @@ layout: default
                         </a>
                     </div>
                 </div>
-                <div class="pt-4 pb-3 px-4">
+                <div class="pt-4 pb-3 px-4 relative">
                     <a href="{{ product.url }}">
                         <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">{{ product.title }}</h4>
                     </a>
@@ -218,7 +218,7 @@ layout: default
                       <p class="text-base text-gray-400 line-through">{{ product.price }}</p>
                       {% endif %}
                     </div>
-                    <div class="flex items-center" style="display: none">
+                    <div class="flex items-center" style="display:none">
                         <div class="flex gap-1 text-sm text-yellow-400">
                             <span><i class="fa-solid fa-star"></i></span>
                             <span><i class="fa-solid fa-star"></i></span>
@@ -229,7 +229,7 @@ layout: default
                         <div class="text-xs text-gray-500 ml-3">(150)</div>
                     </div>
                 </div>
-                <a href="{{ product.url }}" class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">View product</a>
+                <a href="{{ product.url }}" class="absolute left-0 bottom-0 block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">View product</a>
             </div>
             {% endfor %}
         </div>
