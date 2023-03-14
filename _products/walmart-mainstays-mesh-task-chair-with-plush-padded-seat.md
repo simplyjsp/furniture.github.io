@@ -20,7 +20,15 @@ summary: A comfortable office chair for your home. Available in multiple colors.
 date: 2023-03-04 14:00:00 +0000
 ---
 
+[start_description]
+
 Mainstays Vinyl and Mesh Task Chair, Multiple Colors.
+
+An office chair is an extremely common type of seating most commonly featuring a padded chair back with lumbar support, a padded seat, set on casters, allowing it to roll and swivel. They're frequently height-adjustable and are often referred to interchangeably as a desk chair or computer chair. Main Usage of Office Chairs...
+
+[end_description]
+
+[start_specs]
 
 - Color: Black
 - Brand: Unknown
@@ -38,3 +46,21 @@ Mainstays Vinyl and Mesh Task Chair, Multiple Colors.
 - Item Weight: 37.8 pounds
 - Package Dimensions: 24.09 x 22.28 x 9.02 inches
 - Is Discontinued By Manufacturer: No 
+
+[end_specs]
+
+[start_faq]
+
+**How long is the warranty?**
+
+2 years
+
+**What colors are available?**
+
+Black, brown, gray and white.
+
+**What are the dimensions?**
+
+23"D x 18.5"W x 36.5"H
+
+[end_faq]
