@@ -140,21 +140,21 @@ layout: default
            <div class="text-gray-600 desc-pb-12">
                 {% assign description_split = content | split: "[start_description]" %}
                 {% assign description_split2 = description_split[1] | split: "[end_description]" %}
-                {{ description_split2[0] | markdownify | replace: "&lt;/p&gt;", "" }}
+                {{ description_split2[0] | markdownify | replace: "<p>&lt;/p&gt;</p>", "" }}
             </div>
          </div>
          <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-specs01" role="tabpanel" aria-labelledby="tabs-specs-tab01">
            <div class="text-gray-600 desc-pb-12">
                 {% assign specs_split = content | split: "[start_specs]" %}
                 {% assign specs_split2 = specs_split[1] | split: "[end_specs]" %}
-                {{ specs_split2[0] | markdownify | replace: "&lt;/p&gt;", ""  }}
+                {{ specs_split2[0] | markdownify | replace: "<p>&lt;/p&gt;</p>", "" }}
             </div>
          </div>
          <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-faq01" role="tabpanel" aria-labelledby="tabs-faq-tab01">
            <div class="text-gray-600 desc-pb-12">
                 {% assign faq_split = content | split: "[start_faq]" %}
                 {% assign faq_split2 = faq_split[1] | split: "[end_faq]" %}
-                {{ faq_split2[0] | markdownify | replace: "&lt;/p&gt;", ""  }}
+                {{ faq_split2[0] | markdownify | replace: "<p>&lt;/p&gt;</p>", "" }}
             </div>
          </div>
         </div>
