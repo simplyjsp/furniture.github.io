@@ -5,7 +5,7 @@
     <!-- Meta -->
     <title>{% if page.title and page.title != 'Home' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     {% assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
-    <meta name="description" content="{% if page.summary %}{{ page.summary }}{% elsif pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="description" content="{% if page.summary %}{{ page.summary }} | Available at {{ site.title }}.{% elsif pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}">
     <link rel="shortcut icon" type="image/png" href="{{ site.favicon }}">
     <link rel="shortcut icon" sizes="192x192" href="{{ site.favicon }}">
     <link rel="apple-touch-icon" href="{{ site.favicon }}">
@@ -16,7 +16,7 @@
     <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}"/>
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="{{ site.title }}"/>
-    <meta property="og:description" content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}"/>
+    <meta property="og:description" content="{% if page.summary %}{{ page.summary }} | Available at {{ site.title }}.{% elsif pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}"/>
     
     <!-- Twitter integration -->
     <meta name="twitter:card" content="summary">
@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="{{ page.title }}" />
     {% if page.photos[0] %}<meta name="twitter:image" content="{{ page.photos[0] }}" />{% endif %}
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-    <meta name="twitter:description" content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="twitter:description" content="{% if page.summary %}{{ page.summary }} | Available at {{ site.title }}.{% elsif pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
     
     <!-- RSS -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -59,7 +59,7 @@
     <!-- header -->
     <header class="py-4 shadow-sm bg-white">
         <div class="container flex items-center justify-between">
-            <a href="{{ site.baseurl }}/products">
+            <a href="{{ site.baseurl }}/index.html">
                 <img src="{{ site.logo }}" alt="{{ site.title }}" class="h-12">
             </a>
 
@@ -96,9 +96,10 @@
             </div>
 
             <div class="flex items-center justify-between gap-8 pl-12 pr-12">
-              <a href="{{ site.baseurl }}" class="text-gray-200 hover:text-white transition mobile-hide">Home</a>
+              <a href="{{ site.baseurl }}/index.html" class="text-gray-200 hover:text-white transition mobile-hide">Home</a>
               <a href="{{ site.baseurl }}/products" class="text-gray-200 hover:text-white transition mobile-hide">Products</a>
               <a href="{{ site.baseurl }}/about" class="text-gray-200 hover:text-white transition">About</a>
+              <a href="{{ site.baseurl }}/blog" class="text-gray-200 hover:text-white transition mobile-hide">Blog</a>
               <a href="{{ site.baseurl }}/contact" class="text-gray-200 hover:text-white transition">Contact</a>
             </div>
           </div>
