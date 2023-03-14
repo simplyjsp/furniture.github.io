@@ -168,7 +168,7 @@ layout: default
         <div class="grid mobile-grid grid-cols-4 gap-6">
             {% for product in site.products %}
               {% if product.store == page.store %}
-              <div class="bg-white shadow rounded overflow-hidden group">
+              <div class="bg-white shadow rounded overflow-hidden group relative pb-8">
                 <div class="relative">
                     <img src="{{ product.photos[0] }}" alt="" class="w-full">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
@@ -204,7 +204,7 @@ layout: default
                     </div>
                 </div>
                 <a href="{{ product.url }}"
-                    class="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">View product</a>
+                    class="absolute left-0 bottom-0 block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">View product</a>
             </div>
             {% endif %}
           {% endfor %}
