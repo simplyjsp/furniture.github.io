@@ -17,6 +17,20 @@ colors:
   - White: "#FFFFFF"
 store: Walmart
 summary: A comfortable office chair for your home. Available in multiple colors.
+average_review: 5
+reviews:
+  - stars: 5
+    name: Alice
+    date: March 10, 2023
+    text: A great chair, highly recommend!
+  - stars: 4
+    name: John Doe
+    date: March 5, 2023
+    text: Nice chair, but it should be available in more colors.
+  - stars: 5
+    name: Best Buy
+    date: March 1, 2023
+    text: Bought these chairs for my employees. Great quality at a good price.
 date: 2023-03-04 14:00:00 +0000
 ---
 
