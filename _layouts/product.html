@@ -32,12 +32,10 @@ layout: default
           <h2 class="text-3xl font-medium uppercase mb-2">{{ page.title }}</h2>
           {% if page.average_review %}
           <div class="flex items-center mb-4">
-            <div class="flex gap-1 text-sm text-yellow-400">
               {% assign stars = page.average_review %}
-              {% assign empty_stars = 5 %}
+              {% assign empty_stars = 5 | minus: stars %}
               <div class="flex gap-1 text-sm">
                 {% for i in (1..stars) %}
-                {% decrement empty_stars %}
                   <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
                 {% endfor %}
                 {% for i in (1..empty_stars) %}
@@ -174,10 +172,9 @@ layout: default
              {% for review in page.reviews %}
                 <div class="mb-4">
                   {% assign stars = review.stars %}
-                  {% assign empty_stars = 5 %}
+                  {% assign empty_stars = 5 | minus: stars %}
                   <div class="flex gap-1 text-sm">
                     {% for i in (1..stars) %}
-                      {% decrement empty_stars %}
                       <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
                     {% endfor %}
                     {% for i in (1..empty_stars) %}
