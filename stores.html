@@ -67,7 +67,7 @@ layout: default
               var get_desc = item.title+'<br>'+item.address+'<br>'+item.phone+'<br>'+item.opening_times.join(', ');
               var marker = L.marker({lon: get_lon, lat: get_lat}).bindPopup(get_desc).addTo(showrooms_map);
               bounds.extend(marker.getLatLng());
-              showrooms_map.fitBounds(bounds);
+              showrooms_map.fitBounds(bounds, {padding: [50, 50]});
             });
           });
         });
