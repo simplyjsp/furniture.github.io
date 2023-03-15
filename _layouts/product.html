@@ -165,17 +165,17 @@ layout: default
             </div>
          </div>
          <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-reviews01" role="tabpanel" aria-labelledby="tabs-reviews-tab01">
-           <div class="text-gray-600 desc-pb-12 mb-2">
+           <div class="text-gray-600 desc-pb-12">
              {% for review in page.reviews %}
-                <div>
-                  {% assign stars = {{ review.stars }} %}
+                <div class="mb-2">
+                  {% assign stars = review.stars %}
                   <div class="flex gap-1 text-sm text-yellow-400">
                     {% for i in (1..stars) %}
                       <span><i class="fa-solid fa-star"></i></span>
                     {% endfor %}
                   </div>
-                  <div>{{ review.name }}</div>
-                  <div>{{ review.date }}</div>
+                  <div class="text-gray-800 font-medium">{{ review.name }}</div>
+                  <div class="text-sm text-gray-400">{{ review.date }}</div>
                   <div>{{ review.text }}</div>
                 </div>
              {% endfor %}
