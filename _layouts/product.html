@@ -32,9 +32,9 @@ layout: default
             <h2 class="text-3xl font-medium uppercase mb-2">{{ page.title }}</h2>
             {% if product.average_review %}
             <div class="flex items-center mb-4">
-              {% capture number %}{{ product.average_review }}{% endcapture %}
               <div class="flex gap-1 text-sm text-yellow-400">
-                {% for i in (1..number) %}
+                {% assign stars = {{ product.average_review }} %}
+                {% for i in (1..stars) %}
                   <span><i class="fa-solid fa-star"></i></span>
                 {% endfor %}
               </div>
@@ -168,15 +168,15 @@ layout: default
            <div class="text-gray-600 desc-pb-12 mb-2">
              {% for review in product.reviews %}
                 <div>
-                  {% capture number %}{{ review.stars }}{% endcapture %}
+                  {% assign stars = {{ review.stars }} %}
                   <div class="flex gap-1 text-sm text-yellow-400">
-                    {% for i in (1..number) %}
+                    {% for i in (1..stars) %}
                       <span><i class="fa-solid fa-star"></i></span>
                     {% endfor %}
-                    </div>
-                    <div>{{ review.name }}</div>
-                    <div>{{ review.date }}</div>
-                    <div>{{ review.text }}</div>
+                  </div>
+                  <div>{{ review.name }}</div>
+                  <div>{{ review.date }}</div>
+                  <div>{{ review.text }}</div>
                 </div>
              {% endfor %}
            </div>
