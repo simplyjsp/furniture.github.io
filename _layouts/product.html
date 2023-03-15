@@ -33,12 +33,12 @@ layout: default
             {% if product.average_review %}
             <div class="flex items-center mb-4">
               <div class="flex gap-1 text-sm text-yellow-400">
-                {% assign stars = {{ product.average_review }} %}
+                {% assign stars = {{ page.average_review }} %}
                 {% for i in (1..stars) %}
                   <span><i class="fa-solid fa-star"></i></span>
                 {% endfor %}
               </div>
-              <div class="text-xs text-gray-500 ml-3">({{ product.reviews.length }})</div>
+              <div class="text-xs text-gray-500 ml-3">({{ page.reviews.length }})</div>
             </div>
             {% endif %}
             <div class="space-y-2">
@@ -166,7 +166,7 @@ layout: default
          </div>
          <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-reviews01" role="tabpanel" aria-labelledby="tabs-reviews-tab01">
            <div class="text-gray-600 desc-pb-12 mb-2">
-             {% for review in product.reviews %}
+             {% for review in page.reviews %}
                 <div>
                   {% assign stars = {{ review.stars }} %}
                   <div class="flex gap-1 text-sm text-yellow-400">
