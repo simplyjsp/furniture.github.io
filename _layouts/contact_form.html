@@ -16,71 +16,85 @@ layout: default
 
 <!-- main -->
 <div class="container pb-16">
-  <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">{{ page.title }}</h2>
-  <div class="content-pb-1rem">
-    {{ content | markdownify }}
-  </div>
-  <div class="flex flex-wrap mt-4">
-	<div class="grow-0 shrink-0 basis-auto mb-12 lg:mb-0 w-full lg:w-5/12 px-3 lg:px-6">
-	   <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                <input type="hidden" name="access_key" value="7ec3a47e-74d8-45e5-a66e-a35012247846" />
-                <input type="hidden" name="subject" value="New Submission from your Website" />
-                <input type="checkbox" name="botcheck" id="" style="display: none;" />
-                <div class="mb-3">
-                    <input type="text" name="name" id="name" placeholder="Name" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none" />
-                </div>
-                <div class="mb-3">
-                    <input type="email" name="email" id="email" placeholder="Email Address" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none" />
-                </div>
-                <div class="mb-3">
-                    <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none" required></textarea>
-                </div>
-                <div class="mb-3">
-                    <button type="submit" class="w-full px-1 py-2 text-white bg-primary rounded-md">
-                        Send Message
-                    </button>
-                </div>
-                <p class="text-base text-center text-gray-500" id="result"></p>
-            </form>
-	</div>
-			<div class="grow-0 shrink-0 basis-auto w-full lg:w-7/12">
-				<div class="flex flex-wrap">
-					<div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
-						<div class="flex items-start">
-							<div class="grow ml-6">
-								<p class="font-bold mb-1">Email</p>
-								<p class="text-gray-500">{{ page.email }}</p>
-							</div>
-						</div>
-					</div>
-					<div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
-						<div class="flex items-start">
-							<div class="grow ml-6">
-								<p class="font-bold mb-1">Phone Number</p>
-                <p class="text-gray-500">{{ page.phone }}</p>
-							</div>
-						</div>
-					</div>
-					<div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
-						<div class="flex align-start">
-							<div class="grow ml-6">
-								<p class="font-bold mb-1">Address</p>
-								<p class="text-gray-500">{{ page.address }}</p>
-							</div>
-						</div>
-					</div>
-					<div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
-						<div class="flex align-start">
-							<div class="grow ml-6">
-								<p class="font-bold mb-1">Social Media</p>
-								<p class="text-gray-500">[SOCIAL_MEDIA]</p>
-              </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-  </div>
+   <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">{{ page.title }}</h2>
+   <div class="content-pb-1rem">
+      {{ content | markdownify }}
+   </div>
+   <div class="flex flex-wrap mt-4">
+      <div class="grow-0 shrink-0 basis-auto mb-12 lg:mb-0 w-full lg:w-5/12 px-3 lg:px-6">
+         <form action="https://api.web3forms.com/submit" method="POST" id="form">
+            <input type="hidden" name="access_key" value="7ec3a47e-74d8-45e5-a66e-a35012247846" />
+            <input type="hidden" name="subject" value="New Submission from your Website" />
+            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+            <div class="mb-3">
+               <input type="text" name="name" id="name" placeholder="Name" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none" />
+            </div>
+            <div class="mb-3">
+               <input type="email" name="email" id="email" placeholder="Email Address" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none" />
+            </div>
+            <div class="mb-3">
+               <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none" required></textarea>
+            </div>
+            <div class="mb-3">
+               <button type="submit" class="w-full px-1 py-2 text-white bg-primary rounded-md">
+                  Send Message
+               </button>
+            </div>
+            <p class="text-base text-center text-gray-500" id="result"></p>
+         </form>
+      </div>
+      <div class="grow-0 shrink-0 basis-auto w-full lg:w-7/12">
+         <div class="flex flex-wrap">
+            <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+               <div class="flex items-start">
+                  <div class="grow ml-6">
+                     <p class="font-bold mb-1">Email</p>
+                     <p class="text-gray-500">{{ site.contact.email }}</p>
+                  </div>
+               </div>
+            </div>
+            <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+               <div class="flex items-start">
+                  <div class="grow ml-6">
+                     <p class="font-bold mb-1">Phone Number</p>
+                     <p class="text-gray-500">{{ site.contact.phone }}</p>
+                  </div>
+               </div>
+            </div>
+            <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+               <div class="flex align-start">
+                  <div class="grow ml-6">
+                     <p class="font-bold mb-1">Address</p>
+                     <p class="text-gray-500">{{ site.contact.address }}</p>
+                  </div>
+               </div>
+            </div>
+            <div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+               <div class="flex align-start">
+                  <div class="grow ml-6">
+                     <p class="font-bold mb-1">Social Media</p>
+                     <div>
+                        <div class="flex space-x-6">
+                           {% if site.contact.facebook %}
+                           <a href="{{ site.contact.facebook }}" class="text-gray-400 hover:text-gray-500"><i class="fa-brands fa-facebook"></i></a>
+                           {% endif %} {% if site.contact.google %}
+                           <a href="{{ site.contact.google }}" class="text-gray-400 hover:text-gray-500"><i class="fa-brands fa-google"></i></a>
+                           {% endif %} {% if site.contact.twitter %}
+                           <a href="{{ site.contact.twitter }}" class="text-gray-400 hover:text-gray-500"><i class="fa-brands fa-twitter"></i></a>
+                           {% endif %} {% if site.contact.instagram %}
+                           <a href="{{ site.contact.instagram }}" class="text-gray-400 hover:text-gray-500"><i class="fa-brands fa-instagram"></i></a>
+                           {% endif %} {% if site.contact.yelp %}
+                           <a href="{{ site.contact.yelp }}" class="text-gray-400 hover:text-gray-500"><i class="fa-brands fa-yelp"></i></a>
+                           {% endif %}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
 <!-- ./main -->
 
 <script>
