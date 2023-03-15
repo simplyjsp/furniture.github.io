@@ -2,11 +2,21 @@
 layout: default
 ---
 
-<article class="page">
+<!-- breadcrumb -->
+    <div class="container py-4 flex items-center gap-3">
+        <a href="{{ site.baseurl }}/index.html" class="text-primary text-base">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <span class="text-sm text-gray-400">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+        <p class="text-gray-600 font-medium">{{ page.title }}</p>
+    </div>
+<!-- ./breadcrumb -->
 
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
-  </div>
-</article>
+<!-- main -->
+<div class="container pb-16 content-pb-1rem">
+  <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">{{ page.title }}</h2>
+  {{ content | markdownify }}
+</div>
+<!-- ./main -->
