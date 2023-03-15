@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<!-- breadcrumb -->
+    <div class="container py-4 flex items-center gap-3">
+        <a href="{{ site.baseurl }}/index.html" class="text-primary text-base">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <span class="text-sm text-gray-400">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+        <p class="text-gray-600 font-medium">{{ page.title }}</p>
+    </div>
+<!-- ./breadcrumb -->
+
+<!-- main -->
+<div class="container pb-16">
+  <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">{{ page.title }}</h2>
+  <div class="content-pb-1rem">
+    {{ content | markdownify }}
+  </div>
+  <div class="flex flex-wrap">
+			<div class="grow-0 shrink-0 basis-auto mb-12 lg:mb-0 w-full lg:w-5/12 px-3 lg:px-6">
+				<form>
+					<div class="form-group mb-6">
+						<input type="text" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7" placeholder="Name"/>
+					</div>
+					<div class="form-group mb-6">
+						<input type="email" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8" placeholder="Email address"/>
+					</div>
+					<div class="form-group mb-6">
+						<textarea class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleFormControlTextarea13" rows="3" placeholder="Message"></textarea>
+					</div>
+					<button type="submit" class="w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+						Send
+					</button>
+				</form>
+			</div>
+			<div class="grow-0 shrink-0 basis-auto w-full lg:w-7/12">
+				<div class="flex flex-wrap">
+					<div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+						<div class="flex items-start">
+							<div class="grow ml-6">
+								<p class="font-bold mb-1">Email</p>
+								<p class="text-gray-500">{{ page.email }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+						<div class="flex items-start">
+							<div class="grow ml-6">
+								<p class="font-bold mb-1">Phone Number</p>
+                <p class="text-gray-500">{{ page.phone }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+						<div class="flex align-start">
+							<div class="grow ml-6">
+								<p class="font-bold mb-1">Address</p>
+								<p class="text-gray-500">{{ page.address }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="mb-12 grow-0 shrink-0 basis-auto w-full lg:w-6/12 px-3 lg:px-6">
+						<div class="flex align-start">
+							<div class="grow ml-6">
+								<p class="font-bold mb-1">Social Media</p>
+								<p class="text-gray-500">[SOCIAL_MEDIA]</p>
+              </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+<!-- ./main -->
