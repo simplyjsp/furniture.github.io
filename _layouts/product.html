@@ -30,10 +30,10 @@ layout: default
 
         <div>
             <h2 class="text-3xl font-medium uppercase mb-2">{{ page.title }}</h2>
-            {% if product.average_review %}
+            {% if page.average_review %}
             <div class="flex items-center mb-4">
               <div class="flex gap-1 text-sm text-yellow-400">
-                {% assign stars = {{ page.average_review }} %}
+                {% assign stars = page.average_review %}
                 {% for i in (1..stars) %}
                   <span><i class="fa-solid fa-star"></i></span>
                 {% endfor %}
@@ -168,14 +168,18 @@ layout: default
            <div class="text-gray-600 desc-pb-12">
              {% for review in page.reviews %}
                 <div class="mb-2">
-                  {% assign stars = review.stars %}
-                  <div class="flex gap-1 text-sm text-yellow-400">
-                    {% for i in (1..stars) %}
-                      <span><i class="fa-solid fa-star"></i></span>
-                    {% endfor %}
-                  </div>
                   <div class="text-gray-800 font-medium">{{ review.name }}</div>
                   <div class="text-sm text-gray-400">{{ review.date }}</div>
+                  {% assign stars = review.stars %}
+                  {% assign empty_stars = 5 - stars %}
+                  <div class="flex gap-1 text-sm">
+                    {% for i in (1..stars) %}
+                      <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+                    {% endfor %}
+                    {% for i in (1..empty_stars) %}
+                      <span class="text-gray-400"><i class="fa-solid fa-star"></i></span>
+                    {% endfor %}
+                  </div>
                   <div>{{ review.text }}</div>
                 </div>
              {% endfor %}
