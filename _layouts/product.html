@@ -168,7 +168,7 @@ layout: default
            <div class="text-gray-600 desc-pb-12 mb-2">
              {% for review in product.reviews %}
                 <div>
-                  {% capture number %}{{ product.average_review }}{% endcapture %}
+                  {% capture number %}{{ review.stars }}{% endcapture %}
                   <div class="flex gap-1 text-sm text-yellow-400">
                     {% for i in (1..number) %}
                       <span><i class="fa-solid fa-star"></i></span>
