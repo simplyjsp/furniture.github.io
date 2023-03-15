@@ -167,7 +167,7 @@ layout: default
          <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-reviews01" role="tabpanel" aria-labelledby="tabs-reviews-tab01">
            <div class="text-gray-600 desc-pb-12">
              {% for review in page.reviews %}
-                <div class="mb-2">
+                <div class="mb-4">
                   <div class="text-gray-800 font-medium">{{ review.name }}</div>
                   <div class="text-sm text-gray-400">{{ review.date }}</div>
                   {% assign stars = review.stars %}
