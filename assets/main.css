@@ -1752,6 +1752,10 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+p a {
+ color: rgb(1, 185, 67); 
+}
+
 @media (max-width: 800px), (hover: none) {
   .mobile-grid {
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
