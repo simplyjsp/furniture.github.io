@@ -3,53 +3,54 @@
 #
 
 lang: "en"
+url: https://blogtester2.github.io
+
 title: Best Chairs
 description: Find the best chairs for your home.
+
 logo: https://i.postimg.cc/y6prxp9P/chair-logo.png
 favicon: https://i.ibb.co/BKqmkBj/chair-192.png
 avatar: https://i.ibb.co/BKqmkBj/chair-192.png
 
-#
-# Flags below are optional
-#
+contact:
+  phone: "(844) 890-789"
+  email: "support@bestchairs.com"
+  address: "150 Harrison Ave, Kearny, NJ 07032, United States"
+  facebook: "https://facebook.com/BestChairs"
+  google: "https://businesses.google.com/BestChairs"
+  twitter: "https://twitter.com/BestChairs"
+  instagram: "https://instagram.com/BestChairs"
+  yelp: "https://yelp.com/BestChairs"
 
-# Your website URL (e.g. https://forever-jekyll.github.io or https://forever-jekyll.com)
-# Used for Sitemap.xml and your RSS feed
-url: https://blogtester2.github.io
+footer:
+  description: "Best Chairs helps you to find the best chairs for your home or office. Browse our online store or visit our showrooms."
+  benefits:
+    - "Range of high quality chairs"
+    - "100+ positive reviews"
+    - "Free shipping"
+    - "2 year warranty"
 
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
+# 
+# You don't need to change any of the configuration flags below
+# 
+
 baseurl: ""
 
-# Time zone
 timezone: null
 
-# Excerpt separator
 excerpt_separator: <!--more-->
-
-#
-# !! You don't need to change any of the configuration flags below !!
-#
 
 permalink: pretty
 
-# Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
   input: GFM
-  # Jekyll 3 and GitHub Pages now support rouge for syntax highlighting
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
     css_class: 'highlight'
 
-# Pagination
 paginate: 5
 paginate_path: "/page/:num/"
 
-# Jekyll Datapage Generator
 collections:
   products:
     _hide_content: false
@@ -58,15 +59,9 @@ collections:
     _hide_content: false
     output: true
 
-# Set the Sass partials directory, as we're using @imports
-sass:
-  sass_dir: _sass
-  style: :expanded # You might prefer to minify using :compressed
-
-# Use the following plug-ins
 plugins:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-sitemap
+  - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
   - jekyll-seo-tag
@@ -74,7 +69,6 @@ plugins:
   - webrick
   - jekyll-github-metadata
 
-# Exclude these files from your production _site
 exclude:
   - Gemfile
   - Gemfile.lock
