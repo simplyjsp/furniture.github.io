@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<!-- breadcrumb -->
+    <div class="container py-4 flex items-center gap-3">
+        <a href="{{ site.baseurl }}/index.html" class="text-primary text-base">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <span class="text-sm text-gray-400">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+        <p class="text-gray-600 font-medium">{{ page.title }}</p>
+    </div>
+<!-- ./breadcrumb -->
+
+<!-- main -->
+<div class="container pb-16">
+  <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">{{ page.title }}</h2>
+  <div class="content-pb-1rem">
+  {{ content | markdownify }}
+  </div>
+  <div id="accordion mt-4">
+    {% for q in page.questions %}
+    <div class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800 mb-2">
+        <h2 class="mb-0" id="q-{{ q.question | slugify }}">
+          <button data-te-target="#a-{{ q.question | slugify }}" aria-controls="a-{{ q.question | slugify }}" class="group relative flex w-full items-center rounded-t-[15px] border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]" type="button" data-te-collapse-init data-te-collapse-collapsed aria-expanded="false">
+            {{ q.question }}
+          </button>
+        </h2>
+        <div id="a-{{ q.question | slugify }}" class="!visible hidden" data-te-collapse-item data-te-collapse-show aria-labelledby="q-{{ q.question | slugify }}">
+            <div class="py-4 px-5">
+               {{ q.answer | markdownify }}
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+<!-- ./main -->
