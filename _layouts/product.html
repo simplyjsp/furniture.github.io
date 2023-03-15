@@ -30,15 +30,17 @@ layout: default
 
         <div>
             <h2 class="text-3xl font-medium uppercase mb-2">{{ page.title }}</h2>
-            <div class="flex items-center mb-4" style="display:none">
-                <div class="flex gap-1 text-sm text-yellow-400">
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <span><i class="fa-solid fa-star"></i></span>
-                    <span><i class="fa-solid fa-star"></i></span>
-                </div>
+            {% if product.average_review %}
+            <div class="flex items-center mb-4">
+              {% capture number %}{{ product.average_review }}{% endcapture %}
+              <div class="flex gap-1 text-sm text-yellow-400">
+                {% for i in (1..number) %}
+                  <span><i class="fa-solid fa-star"></i></span>
+                {% endfor %}
+              </div>
+              <div class="text-xs text-gray-500 ml-3">({{ product.reviews.length }})</div>
             </div>
+            {% endif %}
             <div class="space-y-2">
                 <p class="text-gray-800 font-semibold space-x-2">
                     <span>Availability: </span>
@@ -134,6 +136,11 @@ layout: default
                FAQ
              </a>
            </li>
+           <li role="presentation" class="flex-auto text-left">
+             <a href="#tabs-reviews01" class="font-roboto my-2 block border-x-0 border-t-0 border-b-2 border-transparent pt-4 pb-3.5 font-medium leading-tight text-neutral-500 hover:isolate hover:border-transparent focus:isolate focus:border-transparent data-[te-nav-active]:text-primary" data-te-toggle="pill" data-te-target="#tabs-reviews01" role="tab" aria-controls="tabs-reviews01" aria-selected="false">
+               Reviews
+             </a>
+           </li>
         </ul>
        <div class="mb-6">
          <div class="hidden opacity-0 opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-description01" role="tabpanel" aria-labelledby="tabs-description-tab01" data-te-tab-active>
@@ -156,6 +163,23 @@ layout: default
                 {% assign faq_split2 = faq_split[1] | split: "[end_faq]" %}
                 {{ faq_split2[0] | markdownify | replace: "<p>&lt;/p&gt;</p>", "" }}
             </div>
+         </div>
+         <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-faq01" role="tabpanel" aria-labelledby="tabs-faq-tab01">
+           <div class="text-gray-600 desc-pb-12 mb-2">
+             {% for review in product.reviews %}
+                <div>
+                  {% capture number %}{{ product.average_review }}{% endcapture %}
+                  <div class="flex gap-1 text-sm text-yellow-400">
+                    {% for i in (1..number) %}
+                      <span><i class="fa-solid fa-star"></i></span>
+                    {% endfor %}
+                    </div>
+                    <div>{{ review.name }}</div>
+                    <div>{{ review.date }}</div>
+                    <div>{{ review.text }}</div>
+                </div>
+             {% endfor %}
+           </div>
          </div>
         </div>
       </div>
