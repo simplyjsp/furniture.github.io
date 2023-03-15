@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" href="{{ site.favicon }}">
 
     <!-- Facebook integration -->
-    <meta property="og:title" content="{{ page.title }}"/>
+    <meta property="og:title" content="{% if page.title and page.title != 'Home' %}{{ page.title }} | {% endif %}{{ site.title }}"/>
     {% if page.photos[0] %}<meta property="og:image" content="{{ page.photos[0] }}"/>{% endif %}
     <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}"/>
     <meta property="og:type" content="article">
@@ -21,7 +21,7 @@
     <!-- Twitter integration -->
     <meta name="twitter:card" content="summary">
     {% if site.twitter_url %}<meta name="twitter:site" content="{{ site.twitter_url }}">{% endif %}
-    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:title" content="{% if page.title and page.title != 'Home' %}{{ page.title }} | {% endif %}{{ site.title }}" />
     {% if page.photos[0] %}<meta name="twitter:image" content="{{ page.photos[0] }}" />{% endif %}
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
     <meta name="twitter:description" content="{% if page.summary %}{{ page.summary }} | Available at {{ site.title }}.{% elsif pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
