@@ -18,7 +18,7 @@ title: Blog
             <p class="text-gray-500 pb-2">
               {{ post.excerpt | markdownify | strip_html | truncate: 160 }}
             </p>
-            <p class="text-gray-400 mb-2 text-sm">
+            <p class="text-gray-400 mb-4 mt-1 text-sm">
               {{ post.date | date: "%B %e, %Y" }}
             </p>
             <a href="{{ site.baseurl }}{{ post.url }}">
