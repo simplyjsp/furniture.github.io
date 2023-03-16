@@ -1785,4 +1785,10 @@ p a {
   .mobile-hide {
     display: none !important;
   }
+  
+  #main.container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    max-width: 95%;
+  }
 }
