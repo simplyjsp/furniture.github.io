@@ -1,34 +1,32 @@
 ---
-layout: default
+layout: page
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
+<div>
+  <div class="block rounded-lg shadow-lg bg-white mb-4">
+      <div class="flex flex-wrap items-center w-3/5 mobile-full">
+        {% if page.image contains 'https://' %}
+        <div class="grow-0 shrink-0 basis-auto block lg:flex w-full">
+          <img src="{{ page.image }}" alt="" class="w-full rounded-t-lg md:rounded-tr-none md:rounded-bl-lg" />
+        </div>
+        {% endif %}
+        <div class="grow-0 shrink-0 basis-auto w-full">
+          <div class="px-6 py-12 md:px-12">
+            <h2 class="text-xl font-bold font-roboto uppercase mb-6">
+              <a href="{{ site.baseurl }}{{ post.url }}">{{ page.title }}</a>
+            </h2>
+            <div class="text-gray-400 mb-2 text-sm">
+              {{ page.date | date: "%B %e, %Y" }}
+            </div>
+            <div class="pb-2 content-pb-1rem">
+              {{ content | markdownify }}
+            </div>
+            <div class="text-gray-400 mb-2 text-sm">
+              <p>Share:</p>
+              {% include share-buttons.html %}
+            </div>
+        </div>
+      </div>
   </div>
-
-  <div class="date">
-    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;{{ page.date | date: "%B %e, %Y" }}</span>
-  </div>
-
-  <div class="post-categories">
-    <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;Tags:&nbsp;
-      {% if post %}
-      {% assign categories = post.categories %}
-      {% else %}
-      {% assign categories = page.categories %}
-      {% endif %}
-      {% for category in categories %}
-      <a class="categories-button"<a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
-      {% unless forloop.last %}{% endunless %}
-      {% endfor %}
-  </div>
-
-  <div class="share-post">
-    <i class="fa fa-share-alt-square fa-fw" aria-hidden="true"></i>&nbsp;Share:&nbsp;
-    {% include share-buttons.html %}
-  </div>
-
-</article>
+  <br>
+</div>
