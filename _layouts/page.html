@@ -16,7 +16,14 @@ layout: default
 
 {% if page.path contains '_posts' %}
 <!-- main -->
-<div class="container pb-16 content-pb-1rem w-4/5 mobile-full" style="margin:0 auto;">
+<div class="container pb-16 w-4/5 mobile-full" style="margin:0 auto;">
+  {{ content | markdownify }}
+</div>
+<!-- ./main -->
+{% elsif page.path contains 'blog' %}
+<!-- main -->
+<div class="container pb-16 w-4/5 mobile-full" style="margin:0 auto;">
+  <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">{{ page.title }}</h2>
   {{ content | markdownify }}
 </div>
 <!-- ./main -->
