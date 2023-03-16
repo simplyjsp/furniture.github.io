@@ -1490,6 +1490,22 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 1rem;
 }
 
+.content-pb-1rem h1, .content-pb-1rem h2, .content-pb-1rem h3, .content-pb-1rem h4 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: Roboto, sans-serif;
+}
+
+.content-pb-1rem img {
+  margin: 0.5rem auto;
+  max-width: 90%;
+  height: auto;
+}
+
 .text-left {
   text-align: left;
 }
