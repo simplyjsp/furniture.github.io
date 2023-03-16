@@ -7,15 +7,17 @@ layout: page
       <div class="flex flex-wrap items-center">
         <div class="grow-0 shrink-0 basis-auto w-full">
           <div class="px-6 py-12 md:px-12">
-            <h2 class="text-xl font-bold font-roboto uppercase mb-6">
-              <a href="{{ site.baseurl }}{{ post.url }}">{{ page.title }}</a>
+            <h2 class="text-2xl font-medium text-gray-800 uppercase mb-4">
+              {{ page.title }}
             </h2>
-            <div class="text-gray-400 mb-2 text-sm">
+            <div class="text-gray-400 mb-4 text-sm">
               {{ page.date | date: "%B %e, %Y" }}
             </div>
+            <hr class="h-px bg-gray-200 border-0 mb-6 mt-6">
             <div class="pb-2 content-pb-1rem">
               {{ content | markdownify }}
             </div>
+            <hr class="h-px bg-gray-200 border-0 mb-6 mt-6">
             <div class="text-gray-400 mb-2 text-sm">
               <p>Share:</p>
               {% include share-buttons.html %}
