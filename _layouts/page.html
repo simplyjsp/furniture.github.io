@@ -10,13 +10,21 @@ layout: default
         <span class="text-sm text-gray-400">
             <i class="fa-solid fa-chevron-right"></i>
         </span>
-        <p class="text-gray-600 font-medium">{{ page.title }}</p>
+        <p class="text-gray-600 font-medium">{% if page.path contains '_posts' %} Blog {% else %} {{ page.title }} {% endif %}</p>
     </div>
 <!-- ./breadcrumb -->
 
+{% if page.path contains '_posts' %}
+<!-- main -->
+<div class="container pb-16 content-pb-1rem w-4/5 mobile-full" style="margin:0 auto;">
+  {{ content | markdownify }}
+</div>
+<!-- ./main -->
+{% else %}
 <!-- main -->
 <div class="container pb-16 content-pb-1rem w-4/5 mobile-full" style="margin:0 auto;">
   <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">{{ page.title }}</h2>
   {{ content | markdownify }}
 </div>
 <!-- ./main -->
+{% endif %}
