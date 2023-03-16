@@ -60,6 +60,14 @@
 - Select your images and click "Upload"
 - The image URL is in this format: https://bestchairs.com/assets/image/filename.jpeg
 
+# Setup the contact form
+
+- Get a free access key from https://web3forms.com/#start
+- Edit the file "/\_layouts/contact_form.html"
+- Change this code to your own access key:
+
+`<input type="hidden" name="access_key" value="xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />`
+
 # Markdown guides
 
 - https://www.reddit.com/wiki/markdown/
