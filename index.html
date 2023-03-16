@@ -1,202 +1,40 @@
 ---
-layout: default
+layout: homepage
+title: Home
+slide1:
+  photo: "https://tecdn.b-cdn.net/img/Photos/Slides/img%20(15).jpg"
+  text_color: "white"
+  heading: "The best chairs <br> for your home"
+  subtitle: "Comfortable chairs for your home or office at a good price. <br> Visit our showrooms or browse our online store."
+  button_text: "Shop Now"
+  button_link: "products"
+slide2:
+  photo: "https://tecdn.b-cdn.net/img/Photos/Slides/img%20(22).jpg"
+  text_color: "white"
+  heading: "Free shipping & 2 year guarantee"
+  subtitle: "Find the perfect chair with Best Chairs"
+  button_text: "More Info"
+  button_link: "faq"
+slide3:
+  photo: "https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg"
+  text_color: "white"
+  heading: "Visit our showrooms"
+  subtitle: "We have 3 showrooms in New Jersey"
+  button_text: "Visit Us"
+  button_link: "stores"
+box1:
+  icon: "comments"
+  heading: "Free Consultation"
+  subtitle: "Find the perfect chair"
+box2:
+  icon: "chair"
+  heading: "Free Shipping"
+  subtitle: "On all orders"
+box3:
+  icon: "thumbs-up"
+  heading: "2 Year Guarantee"
+  subtitle: "On all products"
+banner: "https://i.postimg.cc/fW0TZctZ/chairs-ad.jpg"
 ---
 
-<!-- carousel -->
-<div id="carouselExampleCaptions" class="relative" data-te-carousel-init data-te-carousel-slide>
-    <div class="absolute right-0 bottom-0 left-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0" data-te-carousel-indicators>
-        <button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="0" data-te-carousel-active class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="1" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none" aria-label="Slide 2"></button>
-        <button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="2" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none" aria-label="Slide 3"></button>
-    </div>
-    <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-        <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-active data-te-carousel-item style="backface-visibility: hidden">
-            <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(15).jpg" class="block w-full" alt="..." />
-            <div class="absolute inset-x-[15%] top-1/4 hidden py-5 text-center text-white md:block">
-                <h1 class="text-6xl text-white font-medium mb-4 capitalize">
-                  The best chairs <br> for your home
-                </h1>
-                <p>
-                  Comfortable chairs for your home or office at a good price. <br> Visit our showrooms or browse our online store.
-                </p>
-                <div class="mt-12">
-                  <a href="{{ site.baseurl }}/products" class="bg-primary border border-primary text-white px-8 py-3 font-medium rounded-md hover:bg-transparent hover:text-primary">
-                      Shop Now
-                  </a>
-               </div>
-            </div>
-        </div>
-        <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item style="backface-visibility: hidden">
-            <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(22).jpg" class="block w-full" alt="..." />
-            <div class="absolute inset-x-[15%] top-1/4 hidden py-5 text-center text-white md:block">
-                <h1 class="text-6xl text-white font-medium mb-4 capitalize">
-                  Free shipping & 2 year guarantee
-                </h1>
-                <p>
-                  Find the perfect chair with Best Chairs
-                </p>
-                <div class="mt-12">
-                  <a href="{{ site.baseurl }}/faq" class="bg-primary border border-primary text-white px-8 py-3 font-medium rounded-md hover:bg-transparent hover:text-primary">
-                      More info
-                  </a>
-               </div>
-            </div>
-        </div>
-        <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item style="backface-visibility: hidden">
-            <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg" class="block w-full" alt="..." />
-            <div class="absolute inset-x-[15%] top-1/4 hidden py-5 text-center text-white md:block">
-                <h1 class="text-6xl text-white font-medium mb-4 capitalize">
-                  Visit our showrooms
-                </h1>
-                <p>
-                  We have 3 showrooms in New Jersey
-                </p>
-                <div class="mt-12">
-                  <a href="{{ site.baseurl }}/stores" class="bg-primary border border-primary text-white px-8 py-3 font-medium rounded-md hover:bg-transparent hover:text-primary">
-                      Shop Now
-                  </a>
-               </div>
-            </div>
-        </div>
-    </div>
-    <button class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-te-target="#carouselExampleCaptions" data-te-slide="prev">
-    <span class="inline-block h-8 w-8">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="h-6 w-6">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5L8.25 12l7.5-7.5" />
-      </svg>
-    </span>
-    <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
-  </button>
-    <button class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-te-target="#carouselExampleCaptions" data-te-slide="next">
-    <span class="inline-block h-8 w-8">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="h-6 w-6">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-      </svg>
-    </span>
-    <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
-  </button>
-</div>
-<!-- ./carousel -->
-
-    <!-- features -->
-    <div class="container pt-16 pb-6">
-        <div class="w-10/12 grid mobile-grid grid-cols-3 gap-6 mx-auto justify-center">
-            <a href="{{ site.baseurl }}/faq">
-            <div class="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <span class="text-primary text-3xl"><i class="fa-regular fa-comments"></i></span>
-                <div>
-                    <h4 class="font-medium capitalize text-lg">Free Consultation</h4>
-                    <p class="text-gray-500 text-sm">Find the perfect chair</p>
-                </div>
-            </div>
-            </a>
-            <a href="{{ site.baseurl }}/faq">
-            <div class="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <span class="text-primary text-3xl"><i class="fa-solid fa-chair"></i></span>
-                <div>
-                    <h4 class="font-medium capitalize text-lg">Free Shipping</h4>
-                    <p class="text-gray-500 text-sm">On all orders</p>
-                </div>
-            </div>
-            </a>
-            <a href="{{ site.baseurl }}/faq">
-            <div class="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-                <span class="text-primary text-3xl"><i class="fa-regular fa-thumbs-up"></i></span>
-                <div>
-                    <h4 class="font-medium capitalize text-lg">2 Year Guarantee</h4>
-                    <p class="text-gray-500 text-sm">On all products</p>
-                </div>
-            </div>
-            </a>
-        </div>
-    </div>
-    <!-- ./features -->
-
-    <!-- categories -->
-    <div class="container py-16">
-        <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Stores</h2>
-        <div class="grid mobile-grid grid-cols-3 gap-3">
-            {% for store in site.stores %}
-            <div class="relative rounded-sm overflow-hidden group">
-                <img src="{{ store.photos[0] }}" alt="category 1" class="w-full">
-                <a href="{{ store.url }}"
-                    class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">{{ store.title }}</a>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <!-- ./categories -->
-
-    <!-- new arrival -->
-    <div class="container pb-16">
-        <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Browse products</h2>
-        <div class="grid mobile-grid grid-cols-4 gap-6">
-            {% for product in site.products %}
-            <div class="bg-white shadow rounded overflow-hidden group relative pb-8">
-                <div class="relative">
-                    <img src="{{ product.photos[0] }}" alt="" class="w-full">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-                        <a href="{{ product.url }}"
-                            class="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                            title="view product">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="pt-4 pb-3 px-4">
-                    <a href="{{ product.url }}">
-                        <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">{{ product.title }}</h4>
-                    </a>
-                    <div class="flex items-baseline mb-1 space-x-2">
-                      {% if product.sale_price == product.price %}
-                      <p class="text-xl text-primary font-semibold">{{ product.price }}</p>
-                      {% else %}
-                      <p class="text-xl text-primary font-semibold">{{ product.sale_price }}</p>
-                      <p class="text-base text-gray-400 line-through">{{ product.price }}</p>
-                      {% endif %}
-                    </div>
-                    <div class="flex items-center" style="display:none">
-                        <div class="flex gap-1 text-sm text-yellow-400">
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                        </div>
-                        <div class="text-xs text-gray-500 ml-3">(150)</div>
-                    </div>
-                </div>
-                <a href="{{ product.url }}" class="absolute left-0 bottom-0 block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">View product</a>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <!-- ./new arrival -->
-
-    <!-- ads -->
-    <div class="container pb-16">
-        <a href="#">
-            <img src="https://i.postimg.cc/fW0TZctZ/chairs-ad.jpg" alt="" class="w-full">
-        </a>
-    </div>
-    <!-- ./ads -->
-
+<!-- homepage -->
